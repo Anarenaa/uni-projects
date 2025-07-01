@@ -1,0 +1,7 @@
+fastapi
+sqlalchemy
+pydantic
+alembic
+psycopg2-binary
+pydantic_settings
+uvicorn
