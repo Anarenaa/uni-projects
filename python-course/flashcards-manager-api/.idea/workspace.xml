@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="894c2fa2-4972-4ea7-a518-e7adede1fc05" name="Changes" comment="Sets methods with category_ids + error handling">
+      <change beforePath="$PROJECT_DIR$/db/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2xVlGducJ14l9xZ0KtMtoVrB9l9" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.flashcard.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.set.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-PY-243.24978.54" />
+        <option value="bundled-python-sdk-91e3b7efe1d4-466328ff949b-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.24978.54" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="894c2fa2-4972-4ea7-a518-e7adede1fc05" name="Changes" comment="" />
+      <created>1748031026784</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1748031026784</updated>
+      <workItem from="1748031028173" duration="4000" />
+      <workItem from="1748523175241" duration="7040000" />
+      <workItem from="1748544181766" duration="1049000" />
+      <workItem from="1748545265512" duration="1687000" />
+      <workItem from="1748674934646" duration="3655000" />
+      <workItem from="1748880617422" duration="91000" />
+      <workItem from="1749294250875" duration="11860000" />
+      <workItem from="1749476503073" duration="10000" />
+      <workItem from="1749653363473" duration="1156000" />
+      <workItem from="1749733760166" duration="633000" />
+      <workItem from="1749831633268" duration="15526000" />
+      <workItem from="1749892563742" duration="2775000" />
+      <workItem from="1751402043896" duration="499000" />
+    </task>
+    <task id="LOCAL-00001" summary="Created models, then database and tables (using alembic)">
+      <option name="closed" value="true" />
+      <created>1748525442236</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1748525442236</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Created models, then database and tables (using alembic)">
+      <option name="closed" value="true" />
+      <created>1748525466292</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1748525466292</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Created DTOs">
+      <option name="closed" value="true" />
+      <created>1748526569245</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1748526569245</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Default None for Id">
+      <option name="closed" value="true" />
+      <created>1748526805332</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1748526805332</updated>
+    </task>
+    <task id="LOCAL-00005" summary="CRUD operations">
+      <option name="closed" value="true" />
+      <created>1748529607271</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1748529607271</updated>
+    </task>
+    <task id="LOCAL-00006" summary="CRUD operations in Service">
+      <option name="closed" value="true" />
+      <created>1748546866721</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1748546866721</updated>
+    </task>
+    <task id="LOCAL-00007" summary="CRUD operations in Service">
+      <option name="closed" value="true" />
+      <created>1748546890421</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1748546890421</updated>
+    </task>
+    <task id="LOCAL-00008" summary="CRUD operations in Service">
+      <option name="closed" value="true" />
+      <created>1748546898967</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1748546898967</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Removed naming conflict (built-in names)">
+      <option name="closed" value="true" />
+      <created>1748546947545</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1748546947545</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Created controllers">
+      <option name="closed" value="true" />
+      <created>1749294499346</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1749294499346</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Operated some errors">
+      <option name="closed" value="true" />
+      <created>1749298026669</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1749298026669</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Created filter operation and search operation">
+      <option name="closed" value="true" />
+      <created>1749305578502</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1749305578502</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Creating tables again">
+      <option name="closed" value="true" />
+      <created>1749731561883</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1749731561883</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Creating tables again">
+      <option name="closed" value="true" />
+      <created>1749732930784</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1749732930784</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Autodelete when one of objects will be deleted">
+      <option name="closed" value="true" />
+      <created>1749836221737</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1749836221737</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Format editing">
+      <option name="closed" value="true" />
+      <created>1749836261650</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1749836261650</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Methods for category with set relationship">
+      <option name="closed" value="true" />
+      <created>1749836325619</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1749836325619</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Methods for category with set relationship">
+      <option name="closed" value="true" />
+      <created>1749836828522</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1749836828522</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Autodelete migration">
+      <option name="closed" value="true" />
+      <created>1749836873903</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1749836873903</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Sets methods with category_ids + error handling">
+      <option name="closed" value="true" />
+      <created>1749894872923</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1749894872923</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Created models, then database and tables (using alembic)" />
+    <MESSAGE value="Created DTOs" />
+    <MESSAGE value="Default None for Id" />
+    <MESSAGE value="CRUD operations" />
+    <MESSAGE value="CRUD operations in Service" />
+    <MESSAGE value="Removed naming conflict (built-in names)" />
+    <MESSAGE value="Created controllers" />
+    <MESSAGE value="Operated some errors" />
+    <MESSAGE value="Created filter operation and search operation" />
+    <MESSAGE value="Creating tables again" />
+    <MESSAGE value="Autodelete when one of objects will be deleted" />
+    <MESSAGE value="Format editing" />
+    <MESSAGE value="Methods for category with set relationship" />
+    <MESSAGE value="Autodelete migration" />
+    <MESSAGE value="Sets methods with category_ids + error handling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sets methods with category_ids + error handling" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/FlashcardsManager$set.coverage" NAME="set Coverage Results" MODIFIED="1749295710040" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/controllers" />
+    <SUITE FILE_PATH="coverage/FlashcardsManager$main.coverage" NAME="main Coverage Results" MODIFIED="1751402455955" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/FlashcardsManager$flashcard.coverage" NAME="flashcard Coverage Results" MODIFIED="1749301849690" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/controllers" />
+  </component>
+</project>
