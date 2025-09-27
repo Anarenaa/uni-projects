@@ -1,0 +1,4 @@
+Id;PhotoPath;Name;Surname;DateOfBirth;Info
+1;D:\C#\LabOA\Official-Labs\Lab3\Lab3\img\Sora-1.png;Іван;Петренко;2015-11-05;Займається вже 3 роки. Активний учасник змагань
+3;D:\C#\LabOA\Official-Labs\Lab3\Lab3\img\Sora-2.png;Аліна;Крапова;2010-06-09;Професійна танцівниця. Танцювала в різних студіях з 5 років
+4;;Олена;Коваль;2010-06-09;Новенька, досвіду не має

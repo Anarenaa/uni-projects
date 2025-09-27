@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfStudent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Student>
+    <Id>1</Id>
+    <PhotoPath>D:\C#\LabOA\Official-Labs\Lab3\Lab3\img\Sora-1.png</PhotoPath>
+    <Name>Іван</Name>
+    <Surname>Петренко</Surname>
+    <DateOfBirth>2015-11-05T00:00:00</DateOfBirth>
+    <Info>Займається вже 3 роки. Активний учасник змагань</Info>
+  </Student>
+  <Student>
+    <Id>3</Id>
+    <PhotoPath>D:\C#\LabOA\Official-Labs\Lab3\Lab3\img\Sora-2.png</PhotoPath>
+    <Name>Аліна</Name>
+    <Surname>Крапова</Surname>
+    <DateOfBirth>2010-06-09T00:00:00</DateOfBirth>
+    <Info>Професійна танцівниця. Танцювала в різних студіях з 5 років</Info>
+  </Student>
+  <Student>
+    <Id>4</Id>
+    <PhotoPath />
+    <Name>Олена</Name>
+    <Surname>Коваль</Surname>
+    <DateOfBirth>2010-06-09T00:00:00</DateOfBirth>
+    <Info>Новенька, досвіду не має</Info>
+  </Student>
+</ArrayOfStudent>

@@ -1,0 +1,45 @@
+﻿[
+  {
+    "Id": 1,
+    "Name": "Початківці",
+    "Teacher": {
+      "Patronymic": "Олексіївна",
+      "YearsOfExpirience": 3.0,
+      "Id": 2,
+      "PhotoPath": "D:\\C#\\LabOA\\Official-Labs\\Lab3\\Lab3\\img\\Sora-Teacher-1.png",
+      "Name": "Юлія",
+      "Surname": "Крапова"
+    },
+    "Students": []
+  },
+  {
+    "Id": 2,
+    "Name": "Професіонали",
+    "Teacher": {
+      "Patronymic": "Іванівна",
+      "YearsOfExpirience": 5.0,
+      "Id": 1,
+      "PhotoPath": "",
+      "Name": "Світлана",
+      "Surname": "Гончаренко"
+    },
+    "Students": [
+      {
+        "DateOfBirth": "2015-11-05T00:00:00",
+        "Info": "Займається вже 3 роки. Активний учасник змагань",
+        "Id": 1,
+        "PhotoPath": "D:\\C#\\LabOA\\Official-Labs\\Lab3\\Lab3\\img\\Sora-1.png",
+        "Name": "Іван",
+        "Surname": "Петренко"
+      },
+      {
+        "DateOfBirth": "2010-06-09T00:00:00",
+        "Info": "Професійна танцівниця. Танцювала в різних студіях з 5 років",
+        "Id": 3,
+        "PhotoPath": "D:\\C#\\LabOA\\Official-Labs\\Lab3\\Lab3\\img\\Sora-2.png",
+        "Name": "Аліна",
+        "Surname": "Крапова"
+      }
+    ]
+  }
+]

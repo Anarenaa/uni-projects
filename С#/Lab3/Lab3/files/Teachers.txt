@@ -1,0 +1,3 @@
+Id;PhotoPath;Name;Surname;Patronymic;YearsOfExpirience
+1;;Світлана;Гончаренко;Іванівна;5
+2;D:\C#\LabOA\Official-Labs\Lab3\Lab3\img\Sora-Teacher-1.png;Юлія;Крапова;Олексіївна;3

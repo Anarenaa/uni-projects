@@ -1,0 +1,19 @@
+﻿<Window x:Class="Lab3.Forms.AddToGroup"
+        ResizeMode="NoResize"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab3.Forms"
+        mc:Ignorable="d"
+        Title="AddToGroup" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        
+        <ListBox x:Name="listBoxGroups"/>
+        <Button x:Name="btnAddToGroupSave" Grid.Row="1" Width="150" Content="Save" HorizontalAlignment="Right" Margin="40 10" Click="btnAddToGroupSave_Click"/>
+    </Grid>
+</Window>

@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfLesson xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Lesson>
+    <DateOfLesson>2025-06-10T16:00:38</DateOfLesson>
+    <Group>
+      <Id>1</Id>
+      <Name>Початківці</Name>
+      <Teacher>
+        <Id>2</Id>
+        <PhotoPath>D:\C#\LabOA\Official-Labs\Lab3\Lab3\img\Sora-Teacher-1.png</PhotoPath>
+        <Name>Юлія</Name>
+        <Surname>Крапова</Surname>
+        <Patronymic>Олексіївна</Patronymic>
+        <YearsOfExpirience>3</YearsOfExpirience>
+      </Teacher>
+      <Students />
+    </Group>
+    <Teacher>
+      <Id>2</Id>
+      <PhotoPath>D:\C#\LabOA\Official-Labs\Lab3\Lab3\img\Sora-Teacher-1.png</PhotoPath>
+      <Name>Юлія</Name>
+      <Surname>Крапова</Surname>
+      <Patronymic>Олексіївна</Patronymic>
+      <YearsOfExpirience>3</YearsOfExpirience>
+    </Teacher>
+    <Duration>60</Duration>
+  </Lesson>
+  <Lesson>
+    <DateOfLesson>2025-06-11T12:00:55</DateOfLesson>
+    <Group>
+      <Id>2</Id>
+      <Name>Професіонали</Name>
+      <Teacher>
+        <Id>1</Id>
+        <PhotoPath />
+        <Name>Світлана</Name>
+        <Surname>Гончаренко</Surname>
+        <Patronymic>Іванівна</Patronymic>
+        <YearsOfExpirience>5</YearsOfExpirience>
+      </Teacher>
+      <Students>
+        <Student>
+          <Id>1</Id>
+          <PhotoPath>D:\C#\LabOA\Official-Labs\Lab3\Lab3\img\Sora-1.png</PhotoPath>
+          <Name>Іван</Name>
+          <Surname>Петренко</Surname>
+          <DateOfBirth>2015-11-05T00:00:00</DateOfBirth>
+          <Info>Займається вже 3 роки. Активний учасник змагань</Info>
+        </Student>
+        <Student>
+          <Id>3</Id>
+          <PhotoPath>D:\C#\LabOA\Official-Labs\Lab3\Lab3\img\Sora-2.png</PhotoPath>
+          <Name>Аліна</Name>
+          <Surname>Крапова</Surname>
+          <DateOfBirth>2010-06-09T00:00:00</DateOfBirth>
+          <Info>Професійна танцівниця. Танцювала в різних студіях з 5 років</Info>
+        </Student>
+      </Students>
+    </Group>
+    <Teacher>
+      <Id>1</Id>
+      <PhotoPath />
+      <Name>Світлана</Name>
+      <Surname>Гончаренко</Surname>
+      <Patronymic>Іванівна</Patronymic>
+      <YearsOfExpirience>5</YearsOfExpirience>
+    </Teacher>
+    <Duration>90</Duration>
+  </Lesson>
+  <Lesson>
+    <DateOfLesson>2025-06-10T18:00:16</DateOfLesson>
+    <Student>
+      <Id>3</Id>
+      <PhotoPath>D:\C#\LabOA\Official-Labs\Lab3\Lab3\img\Sora-2.png</PhotoPath>
+      <Name>Аліна</Name>
+      <Surname>Крапова</Surname>
+      <DateOfBirth>2010-06-09T00:00:00</DateOfBirth>
+      <Info>Професійна танцівниця. Танцювала в різних студіях з 5 років</Info>
+    </Student>
+    <Teacher>
+      <Id>1</Id>
+      <PhotoPath />
+      <Name>Світлана</Name>
+      <Surname>Гончаренко</Surname>
+      <Patronymic>Іванівна</Patronymic>
+      <YearsOfExpirience>5</YearsOfExpirience>
+    </Teacher>
+    <Duration>60</Duration>
+  </Lesson>
+  <Lesson>
+    <DateOfLesson>2025-06-11T14:00:30</DateOfLesson>
+    <Student>
+      <Id>1</Id>
+      <PhotoPath>D:\C#\LabOA\Official-Labs\Lab3\Lab3\img\Sora-1.png</PhotoPath>
+      <Name>Іван</Name>
+      <Surname>Петренко</Surname>
+      <DateOfBirth>2015-11-05T00:00:00</DateOfBirth>
+      <Info>Займається вже 3 роки. Активний учасник змагань</Info>
+    </Student>
+    <Teacher>
+      <Id>1</Id>
+      <PhotoPath />
+      <Name>Світлана</Name>
+      <Surname>Гончаренко</Surname>
+      <Patronymic>Іванівна</Patronymic>
+      <YearsOfExpirience>5</YearsOfExpirience>
+    </Teacher>
+    <Duration>60</Duration>
+  </Lesson>
+</ArrayOfLesson>

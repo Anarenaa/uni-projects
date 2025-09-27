@@ -1,0 +1,33 @@
+﻿<Window x:Class="Lab3.Forms.AddGroup"
+        ResizeMode="NoResize"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab3.Forms"
+        xmlns:userControl="clr-namespace:Lab3.UserControls"
+        mc:Ignorable="d"
+        Title="AddGroup" Height="400" Width="400">
+    <Grid MaxWidth="300">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <userControl:InputField x:Name="nameOfTheGroup" LabelText="Назва" Grid.Row="1"/>
+        <Grid Margin="5" Grid.Row="2" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="25"/>
+            </Grid.RowDefinitions>
+
+            <Label x:Name="lblInput" Content="Викладач" VerticalAlignment="Bottom" />
+            <ComboBox Name="comboBoxTeachersCreateGroup" Grid.Row="1"/>
+        </Grid>
+
+        <Button x:Name="btnNewGroupSave" Grid.Row="3" Content="Save" Width="100" Margin="0 20" HorizontalAlignment="Right" Click="btnNewGroupSave_Click"/>
+    </Grid>
+</Window>

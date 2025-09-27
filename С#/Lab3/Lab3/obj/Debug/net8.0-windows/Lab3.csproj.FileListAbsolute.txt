@@ -1,0 +1,259 @@
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\obj\Debug\net8.0-windows\Lab3.csproj.AssemblyReference.cache
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\obj\Debug\net8.0-windows\Forms\AddGroup.g.cs
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\obj\Debug\net8.0-windows\Forms\AddLesson.g.cs
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\obj\Debug\net8.0-windows\Forms\AddStudent.g.cs
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\obj\Debug\net8.0-windows\Forms\AddTeacher.g.cs
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\obj\Debug\net8.0-windows\Forms\AddToGroup.g.cs
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\obj\Debug\net8.0-windows\Forms\InfoGroup.g.cs
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\obj\Debug\net8.0-windows\Forms\InfoStudent.g.cs
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\obj\Debug\net8.0-windows\MainWindow.g.cs
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\obj\Debug\net8.0-windows\UserControls\InputField.g.cs
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\obj\Debug\net8.0-windows\App.g.cs
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\obj\Debug\net8.0-windows\Lab3_MarkupCompile.cache
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\obj\Debug\net8.0-windows\Lab3_MarkupCompile.lref
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\obj\Debug\net8.0-windows\Lab3.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\obj\Debug\net8.0-windows\refint\Lab3.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\obj\Debug\net8.0-windows\Lab3.pdb
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\Lab3.exe
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\Lab3.deps.json
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\Lab3.runtimeconfig.json
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\Lab3.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\Lab3.pdb
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\CsvHelper.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\EPPlus.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\EPPlus.Interfaces.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.FileExtensions.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Json.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\Microsoft.IO.RecyclableMemoryStream.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\System.Security.Cryptography.Pkcs.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\System.Security.Cryptography.Xml.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\obj\Debug\net8.0-windows\Forms\AddGroup.baml
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\obj\Debug\net8.0-windows\Forms\AddLesson.baml
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\obj\Debug\net8.0-windows\Forms\AddStudent.baml
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\obj\Debug\net8.0-windows\Forms\AddTeacher.baml
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\obj\Debug\net8.0-windows\Forms\AddToGroup.baml
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\obj\Debug\net8.0-windows\Forms\InfoGroup.baml
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\obj\Debug\net8.0-windows\Forms\InfoStudent.baml
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\obj\Debug\net8.0-windows\MainWindow.baml
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\obj\Debug\net8.0-windows\UserControls\InputField.baml
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\obj\Debug\net8.0-windows\Lab3.g.resources
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\obj\Debug\net8.0-windows\Lab3.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\obj\Debug\net8.0-windows\Lab3.AssemblyInfoInputs.cache
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\obj\Debug\net8.0-windows\Lab3.AssemblyInfo.cs
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\obj\Debug\net8.0-windows\Lab3.csproj.CoreCompileInputs.cache
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\obj\Debug\net8.0-windows\Lab3.csproj.Up2Date
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\obj\Debug\net8.0-windows\Lab3.genruntimeconfig.cache
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\obj\Debug\net8.0-windows\ref\Lab3.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\PdfSharp.BarCodes.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\PdfSharp.Charting.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\PdfSharp.Cryptography.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\PdfSharp.Quality.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\PdfSharp.Shared.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\PdfSharp.Snippets.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\PdfSharp.System.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\PdfSharp.WPFonts.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\PdfSharp.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\PdfSharp-gdi.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\PdfSharp.BarCodes-gdi.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\PdfSharp.Charting-gdi.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\PdfSharp.Quality-gdi.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\PdfSharp.Snippets-gdi.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\MigraDoc.DocumentObjectModel.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\MigraDoc.Rendering-gdi.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\MigraDoc.RtfRendering-gdi.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\SkiaSharp.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\Xceed.Document.NET.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\Xceed.Drawing.NET.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\Xceed.PDF.NET.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\Xceed.Words.NET.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\runtimes\osx\native\libSkiaSharp.dylib
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\runtimes\win-arm64\native\libSkiaSharp.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\runtimes\win-x64\native\libSkiaSharp.dll
+D:\C#\LabOA\Official-Labs\Lab3 (ручна)\Lab3\bin\Debug\net8.0-windows\runtimes\win-x86\native\libSkiaSharp.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\obj\Debug\net8.0-windows\Lab3.csproj.AssemblyReference.cache
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\obj\Debug\net8.0-windows\Forms\AddGroup.g.cs
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\obj\Debug\net8.0-windows\Forms\AddLesson.g.cs
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\obj\Debug\net8.0-windows\Forms\AddStudent.g.cs
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\obj\Debug\net8.0-windows\Forms\AddTeacher.g.cs
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\obj\Debug\net8.0-windows\Forms\AddToGroup.g.cs
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\obj\Debug\net8.0-windows\Forms\InfoGroup.g.cs
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\obj\Debug\net8.0-windows\Forms\InfoStudent.g.cs
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\obj\Debug\net8.0-windows\MainWindow.g.cs
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\obj\Debug\net8.0-windows\UserControls\InputField.g.cs
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\obj\Debug\net8.0-windows\App.g.cs
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\obj\Debug\net8.0-windows\Lab3_MarkupCompile.cache
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\obj\Debug\net8.0-windows\Lab3_MarkupCompile.lref
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\obj\Debug\net8.0-windows\Forms\AddGroup.baml
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\obj\Debug\net8.0-windows\Forms\AddLesson.baml
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\obj\Debug\net8.0-windows\Forms\AddStudent.baml
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\obj\Debug\net8.0-windows\Forms\AddTeacher.baml
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\obj\Debug\net8.0-windows\Forms\AddToGroup.baml
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\obj\Debug\net8.0-windows\Forms\InfoGroup.baml
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\obj\Debug\net8.0-windows\Forms\InfoStudent.baml
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\obj\Debug\net8.0-windows\MainWindow.baml
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\obj\Debug\net8.0-windows\UserControls\InputField.baml
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\obj\Debug\net8.0-windows\Lab3.g.resources
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\obj\Debug\net8.0-windows\Lab3.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\obj\Debug\net8.0-windows\Lab3.AssemblyInfoInputs.cache
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\obj\Debug\net8.0-windows\Lab3.AssemblyInfo.cs
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\obj\Debug\net8.0-windows\Lab3.csproj.CoreCompileInputs.cache
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\obj\Debug\net8.0-windows\refint\Lab3.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\obj\Debug\net8.0-windows\Lab3.pdb
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\Lab3.exe
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\Lab3.deps.json
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\Lab3.runtimeconfig.json
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\Lab3.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\Lab3.pdb
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\CsvHelper.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\EPPlus.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\EPPlus.Interfaces.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.FileExtensions.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Json.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\Microsoft.IO.RecyclableMemoryStream.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\PdfSharp.BarCodes.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\PdfSharp.Charting.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\PdfSharp.Cryptography.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\PdfSharp.Quality.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\PdfSharp.Shared.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\PdfSharp.Snippets.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\PdfSharp.System.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\PdfSharp.WPFonts.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\PdfSharp.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\PdfSharp-gdi.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\PdfSharp.BarCodes-gdi.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\PdfSharp.Charting-gdi.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\PdfSharp.Quality-gdi.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\PdfSharp.Snippets-gdi.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\MigraDoc.DocumentObjectModel.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\MigraDoc.Rendering-gdi.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\MigraDoc.RtfRendering-gdi.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\SkiaSharp.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\System.Security.Cryptography.Pkcs.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\System.Security.Cryptography.Xml.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\Xceed.Document.NET.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\Xceed.Drawing.NET.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\Xceed.PDF.NET.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\Xceed.Words.NET.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\runtimes\osx\native\libSkiaSharp.dylib
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\runtimes\win-arm64\native\libSkiaSharp.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\runtimes\win-x64\native\libSkiaSharp.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\runtimes\win-x86\native\libSkiaSharp.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\obj\Debug\net8.0-windows\Lab3.csproj.Up2Date
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\obj\Debug\net8.0-windows\Lab3.dll
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\obj\Debug\net8.0-windows\Lab3.genruntimeconfig.cache
+D:\C#\LabOA\Official-Labs\Lab3\Lab3\obj\Debug\net8.0-windows\ref\Lab3.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\Lab3.exe
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\Lab3.deps.json
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\Lab3.runtimeconfig.json
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\Lab3.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\Lab3.pdb
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\CsvHelper.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\EPPlus.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\EPPlus.Interfaces.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.FileExtensions.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Json.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\Microsoft.IO.RecyclableMemoryStream.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\PdfSharp.BarCodes.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\PdfSharp.Charting.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\PdfSharp.Cryptography.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\PdfSharp.Quality.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\PdfSharp.Shared.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\PdfSharp.Snippets.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\PdfSharp.System.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\PdfSharp.WPFonts.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\PdfSharp.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\PdfSharp-gdi.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\PdfSharp.BarCodes-gdi.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\PdfSharp.Charting-gdi.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\PdfSharp.Quality-gdi.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\PdfSharp.Snippets-gdi.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\MigraDoc.DocumentObjectModel.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\MigraDoc.Rendering-gdi.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\MigraDoc.RtfRendering-gdi.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\SkiaSharp.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\System.Security.Cryptography.Pkcs.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\System.Security.Cryptography.Xml.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\Xceed.Document.NET.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\Xceed.Drawing.NET.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\Xceed.PDF.NET.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\Xceed.Words.NET.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\runtimes\osx\native\libSkiaSharp.dylib
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\runtimes\win-arm64\native\libSkiaSharp.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\runtimes\win-x64\native\libSkiaSharp.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\runtimes\win-x86\native\libSkiaSharp.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\obj\Debug\net8.0-windows\Lab3.csproj.AssemblyReference.cache
+D:\Desktop\uni-projects\С#\Lab3\Lab3\obj\Debug\net8.0-windows\Forms\AddGroup.g.cs
+D:\Desktop\uni-projects\С#\Lab3\Lab3\obj\Debug\net8.0-windows\Forms\AddLesson.g.cs
+D:\Desktop\uni-projects\С#\Lab3\Lab3\obj\Debug\net8.0-windows\Forms\AddStudent.g.cs
+D:\Desktop\uni-projects\С#\Lab3\Lab3\obj\Debug\net8.0-windows\Forms\AddTeacher.g.cs
+D:\Desktop\uni-projects\С#\Lab3\Lab3\obj\Debug\net8.0-windows\Forms\AddToGroup.g.cs
+D:\Desktop\uni-projects\С#\Lab3\Lab3\obj\Debug\net8.0-windows\Forms\InfoGroup.g.cs
+D:\Desktop\uni-projects\С#\Lab3\Lab3\obj\Debug\net8.0-windows\Forms\InfoStudent.g.cs
+D:\Desktop\uni-projects\С#\Lab3\Lab3\obj\Debug\net8.0-windows\MainWindow.g.cs
+D:\Desktop\uni-projects\С#\Lab3\Lab3\obj\Debug\net8.0-windows\UserControls\InputField.g.cs
+D:\Desktop\uni-projects\С#\Lab3\Lab3\obj\Debug\net8.0-windows\App.g.cs
+D:\Desktop\uni-projects\С#\Lab3\Lab3\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+D:\Desktop\uni-projects\С#\Lab3\Lab3\obj\Debug\net8.0-windows\Lab3_MarkupCompile.cache
+D:\Desktop\uni-projects\С#\Lab3\Lab3\obj\Debug\net8.0-windows\Lab3_MarkupCompile.lref
+D:\Desktop\uni-projects\С#\Lab3\Lab3\obj\Debug\net8.0-windows\Forms\AddGroup.baml
+D:\Desktop\uni-projects\С#\Lab3\Lab3\obj\Debug\net8.0-windows\Forms\AddLesson.baml
+D:\Desktop\uni-projects\С#\Lab3\Lab3\obj\Debug\net8.0-windows\Forms\AddStudent.baml
+D:\Desktop\uni-projects\С#\Lab3\Lab3\obj\Debug\net8.0-windows\Forms\AddTeacher.baml
+D:\Desktop\uni-projects\С#\Lab3\Lab3\obj\Debug\net8.0-windows\Forms\AddToGroup.baml
+D:\Desktop\uni-projects\С#\Lab3\Lab3\obj\Debug\net8.0-windows\Forms\InfoGroup.baml
+D:\Desktop\uni-projects\С#\Lab3\Lab3\obj\Debug\net8.0-windows\Forms\InfoStudent.baml
+D:\Desktop\uni-projects\С#\Lab3\Lab3\obj\Debug\net8.0-windows\MainWindow.baml
+D:\Desktop\uni-projects\С#\Lab3\Lab3\obj\Debug\net8.0-windows\UserControls\InputField.baml
+D:\Desktop\uni-projects\С#\Lab3\Lab3\obj\Debug\net8.0-windows\Lab3.g.resources
+D:\Desktop\uni-projects\С#\Lab3\Lab3\obj\Debug\net8.0-windows\Lab3.GeneratedMSBuildEditorConfig.editorconfig
+D:\Desktop\uni-projects\С#\Lab3\Lab3\obj\Debug\net8.0-windows\Lab3.AssemblyInfoInputs.cache
+D:\Desktop\uni-projects\С#\Lab3\Lab3\obj\Debug\net8.0-windows\Lab3.AssemblyInfo.cs
+D:\Desktop\uni-projects\С#\Lab3\Lab3\obj\Debug\net8.0-windows\Lab3.csproj.CoreCompileInputs.cache
+D:\Desktop\uni-projects\С#\Lab3\Lab3\obj\Debug\net8.0-windows\Lab3.sourcelink.json
+D:\Desktop\uni-projects\С#\Lab3\Lab3\obj\Debug\net8.0-windows\Lab3.csproj.Up2Date
+D:\Desktop\uni-projects\С#\Lab3\Lab3\obj\Debug\net8.0-windows\Lab3.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\obj\Debug\net8.0-windows\refint\Lab3.dll
+D:\Desktop\uni-projects\С#\Lab3\Lab3\obj\Debug\net8.0-windows\Lab3.pdb
+D:\Desktop\uni-projects\С#\Lab3\Lab3\obj\Debug\net8.0-windows\Lab3.genruntimeconfig.cache
+D:\Desktop\uni-projects\С#\Lab3\Lab3\obj\Debug\net8.0-windows\ref\Lab3.dll

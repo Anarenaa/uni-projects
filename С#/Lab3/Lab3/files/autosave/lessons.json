@@ -1,0 +1,117 @@
+﻿[
+  {
+    "DateOfLesson": "2025-06-10T16:00:38",
+    "Group": {
+      "Id": 1,
+      "Name": "Початківці",
+      "Teacher": {
+        "Patronymic": "Олексіївна",
+        "YearsOfExpirience": 3.0,
+        "Id": 2,
+        "PhotoPath": "D:\\C#\\LabOA\\Official-Labs\\Lab3\\Lab3\\img\\Sora-Teacher-1.png",
+        "Name": "Юлія",
+        "Surname": "Крапова"
+      },
+      "Students": []
+    },
+    "Student": null,
+    "GetGroupOrStudent": "\"Початківці\"",
+    "Teacher": {
+      "Patronymic": "Олексіївна",
+      "YearsOfExpirience": 3.0,
+      "Id": 2,
+      "PhotoPath": "D:\\C#\\LabOA\\Official-Labs\\Lab3\\Lab3\\img\\Sora-Teacher-1.png",
+      "Name": "Юлія",
+      "Surname": "Крапова"
+    },
+    "Duration": 60.0
+  },
+  {
+    "DateOfLesson": "2025-06-11T12:00:55",
+    "Group": {
+      "Id": 2,
+      "Name": "Професіонали",
+      "Teacher": {
+        "Patronymic": "Іванівна",
+        "YearsOfExpirience": 5.0,
+        "Id": 1,
+        "PhotoPath": "",
+        "Name": "Світлана",
+        "Surname": "Гончаренко"
+      },
+      "Students": [
+        {
+          "DateOfBirth": "2015-11-05T00:00:00",
+          "Info": "Займається вже 3 роки. Активний учасник змагань",
+          "Id": 1,
+          "PhotoPath": "D:\\C#\\LabOA\\Official-Labs\\Lab3\\Lab3\\img\\Sora-1.png",
+          "Name": "Іван",
+          "Surname": "Петренко"
+        },
+        {
+          "DateOfBirth": "2010-06-09T00:00:00",
+          "Info": "Професійна танцівниця. Танцювала в різних студіях з 5 років",
+          "Id": 3,
+          "PhotoPath": "D:\\C#\\LabOA\\Official-Labs\\Lab3\\Lab3\\img\\Sora-2.png",
+          "Name": "Аліна",
+          "Surname": "Крапова"
+        }
+      ]
+    },
+    "Student": null,
+    "GetGroupOrStudent": "\"Професіонали\"",
+    "Teacher": {
+      "Patronymic": "Іванівна",
+      "YearsOfExpirience": 5.0,
+      "Id": 1,
+      "PhotoPath": "",
+      "Name": "Світлана",
+      "Surname": "Гончаренко"
+    },
+    "Duration": 90.0
+  },
+  {
+    "DateOfLesson": "2025-06-10T18:00:16",
+    "Group": null,
+    "Student": {
+      "DateOfBirth": "2010-06-09T00:00:00",
+      "Info": "Професійна танцівниця. Танцювала в різних студіях з 5 років",
+      "Id": 3,
+      "PhotoPath": "D:\\C#\\LabOA\\Official-Labs\\Lab3\\Lab3\\img\\Sora-2.png",
+      "Name": "Аліна",
+      "Surname": "Крапова"
+    },
+    "GetGroupOrStudent": "Аліна Крапова",
+    "Teacher": {
+      "Patronymic": "Іванівна",
+      "YearsOfExpirience": 5.0,
+      "Id": 1,
+      "PhotoPath": "",
+      "Name": "Світлана",
+      "Surname": "Гончаренко"
+    },
+    "Duration": 60.0
+  },
+  {
+    "DateOfLesson": "2025-06-11T14:00:30",
+    "Group": null,
+    "Student": {
+      "DateOfBirth": "2015-11-05T00:00:00",
+      "Info": "Займається вже 3 роки. Активний учасник змагань",
+      "Id": 1,
+      "PhotoPath": "D:\\C#\\LabOA\\Official-Labs\\Lab3\\Lab3\\img\\Sora-1.png",
+      "Name": "Іван",
+      "Surname": "Петренко"
+    },
+    "GetGroupOrStudent": "Іван Петренко",
+    "Teacher": {
+      "Patronymic": "Іванівна",
+      "YearsOfExpirience": 5.0,
+      "Id": 1,
+      "PhotoPath": "",
+      "Name": "Світлана",
+      "Surname": "Гончаренко"
+    },
+    "Duration": 60.0
+  }
+]

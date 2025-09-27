@@ -1,0 +1,25 @@
+﻿<Window x:Class="Lab3.Forms.InfoStudent"
+        ResizeMode="NoResize"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab3.Forms"
+        mc:Ignorable="d"
+        Title="InfoStudent" Height="450" Width="800">
+    <Grid Background="#7FF3CAF1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="60*"/>
+        </Grid.ColumnDefinitions>
+
+        <Rectangle x:Name="photoRectangle" Width="200" Height="300" HorizontalAlignment="Right" Margin="0 0 20 0"/>
+        <Label x:Name="lblStudentInfo" Grid.Column="1" Width="400" Height="300" Background="White" HorizontalAlignment="Left" Margin="20 0 0 0" Padding="15" FontSize="15">
+            <Label.ContentTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}" TextWrapping="Wrap"/>
+                </DataTemplate>
+            </Label.ContentTemplate>
+        </Label>
+    </Grid>
+</Window>

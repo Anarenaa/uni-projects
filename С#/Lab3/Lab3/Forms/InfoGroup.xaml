@@ -1,0 +1,20 @@
+﻿<Window x:Class="Lab3.Forms.InfoGroup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab3.Forms"
+        mc:Ignorable="d"
+        Title="InfoGroup" Height="400" Width="400">
+    <Grid>
+        <!--Можна лише скролити, по іншому взаємодіяти не можна-->
+        <ListView Focusable="False" x:Name="ListViewStudentsInGroup" FontSize="14" Padding="14">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="IsHitTestVisible" Value="False"/>
+                    <Setter Property="Focusable" Value="False"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+    </Grid>
+</Window>

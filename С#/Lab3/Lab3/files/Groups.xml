@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Group>
+    <Id>1</Id>
+    <Name>Початківці</Name>
+    <Teacher>
+      <Id>2</Id>
+      <PhotoPath>D:\C#\LabOA\Official-Labs\Lab3\Lab3\img\Sora-Teacher-1.png</PhotoPath>
+      <Name>Юлія</Name>
+      <Surname>Крапова</Surname>
+      <Patronymic>Олексіївна</Patronymic>
+      <YearsOfExpirience>3</YearsOfExpirience>
+    </Teacher>
+    <Students />
+  </Group>
+  <Group>
+    <Id>2</Id>
+    <Name>Професіонали</Name>
+    <Teacher>
+      <Id>1</Id>
+      <PhotoPath />
+      <Name>Світлана</Name>
+      <Surname>Гончаренко</Surname>
+      <Patronymic>Іванівна</Patronymic>
+      <YearsOfExpirience>5</YearsOfExpirience>
+    </Teacher>
+    <Students />
+  </Group>
+</ArrayOfGroup>

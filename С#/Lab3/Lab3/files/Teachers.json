@@ -1,0 +1,18 @@
+﻿[
+  {
+    "Patronymic": "Іванівна",
+    "YearsOfExpirience": 5.0,
+    "Id": 1,
+    "PhotoPath": "",
+    "Name": "Світлана",
+    "Surname": "Гончаренко"
+  },
+  {
+    "Patronymic": "Олексіївна",
+    "YearsOfExpirience": 3.0,
+    "Id": 2,
+    "PhotoPath": "D:\\C#\\LabOA\\Official-Labs\\Lab3\\Lab3\\img\\Sora-Teacher-1.png",
+    "Name": "Юлія",
+    "Surname": "Крапова"
+  }
+]
