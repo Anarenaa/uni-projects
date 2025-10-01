@@ -168,5 +168,22 @@ namespace UI
                 generator.GenerateTransactionsReport(transactions, filePath);
             }
         }
+
+        private void docxReport_Click(object sender, RoutedEventArgs e)
+        {
+            var generator = new TransactionsDocxReport();
+
+            var dialog = new SaveFileDialog();
+            dialog.Filter = $"DOCX files|*.docx";
+
+            var result = dialog.ShowDialog();
+
+            if (result == true)
+            {
+                string filePath = dialog.FileName;
+
+                generator.GenerateTransactionsReport(transactions, filePath);
+            }
+        }
     }
 }

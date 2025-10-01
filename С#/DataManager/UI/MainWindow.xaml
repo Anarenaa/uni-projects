@@ -27,7 +27,7 @@
             </MenuItem>
             <MenuItem Header="Звіти">
                 <MenuItem x:Name="xlsxReport" Header="Згенерувати XLSX-звіт" Click="xlsxReport_Click"/>
-                <MenuItem Header="Згенерувати DOCX-звіт"/>
+                <MenuItem x:Name="docxReport" Header="Згенерувати DOCX-звіт" Click="docxReport_Click"/>
             </MenuItem>
             <MenuItem x:Name="MenuItemDiagrams" Header="Графіки"/>
         </Menu>
