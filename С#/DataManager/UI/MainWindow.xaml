@@ -26,7 +26,7 @@
                 <MenuItem x:Name="MenuItemExit" Header="Вихід" Click="MenuItemExit_Click"/>
             </MenuItem>
             <MenuItem Header="Звіти">
-                <MenuItem Header="Згенерувати XLSX-звіт"/>
+                <MenuItem x:Name="xlsxReport" Header="Згенерувати XLSX-звіт" Click="xlsxReport_Click"/>
                 <MenuItem Header="Згенерувати DOCX-звіт"/>
             </MenuItem>
             <MenuItem x:Name="MenuItemDiagrams" Header="Графіки"/>

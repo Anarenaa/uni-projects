@@ -152,5 +152,21 @@ namespace UI
             DataGridTransactions.ItemsSource = null;
             StatusBarPath.Content = StatusBarQuantity.Content = StatusBarLastOperationTime.Content = null;
         }
+
+        private void xlsxReport_Click(object sender, RoutedEventArgs e)
+        {
+            var generator = new TransactionsXlsxReport();
+
+            var dialog = new SaveFileDialog();
+            dialog.Filter = $"XLSX files|*.xlsx";
+
+            var result = dialog.ShowDialog();
+
+            if(result == true)
+            {
+                string filePath = dialog.FileName;
+                generator.GenerateTransactionsReport(transactions, filePath);
+            }
+        }
     }
 }
