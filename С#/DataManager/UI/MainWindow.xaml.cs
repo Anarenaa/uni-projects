@@ -89,8 +89,23 @@ namespace UI
         void updateTransactionsList()
         {
             DataGridTransactions.ItemsSource = null;
-            DataGridTransactions.ItemsSource = transactions;
-            StatusBarQuantity.Content = $"{transactions.Count} çàïèñ³â";
+            var flatData = transactions.Select(t => new
+            {
+                t.TransactionID,
+                t.Account?.AccountId,
+                t.Customer?.CustomerId,
+                t.TransactionAmount,
+                t.TransactionDate,
+                t.TransactionType,
+                t.Device?.DeviceId,
+                t.Location,
+                t.MerchantID,
+                t.Channel,
+                t.TransactionDuration,
+                t.PreviousTransactionDate
+            });
+            DataGridTransactions.ItemsSource = flatData;
+            StatusBarQuantity.Content = $"{transactions.Count} Ð·Ð°Ð¿Ð¸ÑÑ–Ð²";
             updateLastOperationTime();
         }
         void updateLastOperationTime(){
@@ -102,6 +117,7 @@ namespace UI
             {
                 transactions = _manager.Read(dataPath);
                 updateTransactionsList();
+                MenuItemDiagrams.ItemsSource = typeof(Transaction).GetProperties().Select(p => p.Name).ToList();
             }
             catch (Exception ex)
             {

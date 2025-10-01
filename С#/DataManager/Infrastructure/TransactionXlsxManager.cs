@@ -23,21 +23,33 @@ namespace Infrastructure
                     var transaction = new Transaction
                     {
                         TransactionID = row.Cell(1).GetValue<string>(),
-                        AccountID = row.Cell(2).GetValue<string>(),
                         TransactionAmount = row.Cell(3).GetValue<decimal>(),
                         TransactionDate = row.Cell(4).GetValue<DateTime>(),
                         TransactionType = row.Cell(5).GetValue<string>(),
                         Location = row.Cell(6).GetValue<string>(),
-                        DeviceID = row.Cell(7).GetValue<string>(),
-                        IPAddress = row.Cell(8).GetValue<string>(),
                         MerchantID = row.Cell(9).GetValue<string>(),
                         Channel = row.Cell(10).GetValue<string>(),
-                        CustomerAge = row.Cell(11).GetValue<int>(),
-                        CustomerOccupation = row.Cell(12).GetValue<string>(),
                         TransactionDuration = row.Cell(13).GetValue<int>(),
-                        LoginAttempts = row.Cell(14).GetValue<int>(),
-                        AccountBalance = row.Cell(15).GetValue<decimal>(),
-                        PreviousTransactionDate = row.Cell(16).GetValue<DateTime>()
+                        PreviousTransactionDate = row.Cell(16).GetValue<DateTime>(),
+
+                        Account = new Account
+                        {
+                            AccountId = row.Cell(2).GetValue<string>(),
+                            LoginAttempts = row.Cell(14).GetValue<int>(),
+                            AccountBalance = row.Cell(15).GetValue<decimal>()
+                        },
+
+                        Device = new Device
+                        {
+                            DeviceId = row.Cell(7).GetValue<string>(),
+                            IPAddress = row.Cell(8).GetValue<string>()
+                        },
+
+                        Customer = new Customer
+                        {
+                            Age = row.Cell(11).GetValue<int>(),
+                            Occupation = row.Cell(12).GetValue<string>()
+                        }
                     };
                     transactions.Add(transaction);
                 }
@@ -76,21 +88,33 @@ namespace Infrastructure
                     var row = i + 2;
 
                     worksheet.Cell(row, 1).Value = transaction.TransactionID;
-                    worksheet.Cell(row, 2).Value = transaction.AccountID;
                     worksheet.Cell(row, 3).Value = transaction.TransactionAmount;
                     worksheet.Cell(row, 4).Value = transaction.TransactionDate;
                     worksheet.Cell(row, 5).Value = transaction.TransactionType;
                     worksheet.Cell(row, 6).Value = transaction.Location;
-                    worksheet.Cell(row, 7).Value = transaction.DeviceID;
-                    worksheet.Cell(row, 8).Value = transaction.IPAddress;
                     worksheet.Cell(row, 9).Value = transaction.MerchantID;
                     worksheet.Cell(row, 10).Value = transaction.Channel;
-                    worksheet.Cell(row, 11).Value = transaction.CustomerAge;
-                    worksheet.Cell(row, 12).Value = transaction.CustomerOccupation;
                     worksheet.Cell(row, 13).Value = transaction.TransactionDuration;
-                    worksheet.Cell(row, 14).Value = transaction.LoginAttempts;
-                    worksheet.Cell(row, 15).Value = transaction.AccountBalance;
                     worksheet.Cell(row, 16).Value = transaction.PreviousTransactionDate;
+
+                    if (transaction.Account != null)
+                    {
+                        worksheet.Cell(row, 2).Value = transaction.Account.AccountId;
+                        worksheet.Cell(row, 14).Value = transaction.Account.LoginAttempts;
+                        worksheet.Cell(row, 15).Value = transaction.Account.AccountBalance;
+                    }
+
+                    if (transaction.Device != null)
+                    {
+                        worksheet.Cell(row, 7).Value = transaction.Device.DeviceId;
+                        worksheet.Cell(row, 8).Value = transaction.Device.IPAddress;
+                    }
+
+                    if (transaction.Customer != null)
+                    {
+                        worksheet.Cell(row, 11).Value = transaction.Customer.Age;
+                        worksheet.Cell(row, 12).Value = transaction.Customer.Occupation;
+                    }
                 }
 
                 workbook.SaveAs(path);

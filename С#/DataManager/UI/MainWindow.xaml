@@ -29,6 +29,7 @@
                 <MenuItem Header="Згенерувати XLSX-звіт"/>
                 <MenuItem Header="Згенерувати DOCX-звіт"/>
             </MenuItem>
+            <MenuItem x:Name="MenuItemDiagrams" Header="Графіки"/>
         </Menu>
 
         <DataGrid x:Name="DataGridTransactions" Grid.Row="1" AutoGenerateColumns="True"/>

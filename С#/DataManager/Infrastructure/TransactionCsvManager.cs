@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -22,6 +22,7 @@ namespace Infrastructure
             using (var reader = new StreamReader(path))
             using (var csv = new CsvReader(reader, config))
             {
+                csv.Context.RegisterClassMap<TransactionMap>();
                 records = csv.GetRecords<Transaction>().ToList();
             }
             return records;
@@ -32,6 +33,7 @@ namespace Infrastructure
             using (var writer = new StreamWriter(path))
             using (var csv = new CsvWriter(writer, config))
             {
+                csv.Context.RegisterClassMap<TransactionMap>();
                 csv.WriteRecords(transactions);
             }
         }
