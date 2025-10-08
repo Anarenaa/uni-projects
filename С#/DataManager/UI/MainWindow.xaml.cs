@@ -5,6 +5,7 @@ using Microsoft.Win32;
 using System.IO;
 using static UI.Helper;
 using Core;
+using UI.Windows;
 
 namespace UI
 {
@@ -117,7 +118,7 @@ namespace UI
             {
                 transactions = _manager.Read(dataPath);
                 updateTransactionsList();
-                MenuItemDiagrams.ItemsSource = typeof(Transaction).GetProperties().Select(p => p.Name).ToList();
+                //MenuItemDiagrams.ItemsSource = typeof(Transaction).GetProperties().Select(p => p.Name).ToList();
             }
             catch (Exception ex)
             {
@@ -184,6 +185,30 @@ namespace UI
 
                 generator.GenerateTransactionsReport(transactions, filePath);
             }
+        }
+
+
+        TransactionChartManager chartManager = new TransactionChartManager();
+        private void MenuItemTransactionDate_Click(object sender, RoutedEventArgs e)
+        {
+            Diagram diagram = new Diagram(transactions, chartManager.PlotTransactionsOverTime);
+            diagram.Show();
+        }
+        private void MenuItemTransactionAmount_Click(object sender, RoutedEventArgs e)
+        {
+            Diagram diagram = new Diagram(transactions, chartManager.PlotTransactionsAmount);
+            diagram.Show();
+        }
+
+        private void MenuItemTransactionType_Click(object sender, RoutedEventArgs e)
+        {
+            Diagram diagram = new Diagram(transactions, chartManager.PlotTransactionTypes);
+            diagram.Show();
+        }
+        private void MenuItemTransactionChannel_Click(object sender, RoutedEventArgs e)
+        {
+            Diagram diagram = new Diagram(transactions, chartManager.PlotTransactionChannel);
+            diagram.Show();
         }
     }
 }
