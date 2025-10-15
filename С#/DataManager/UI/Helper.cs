@@ -10,6 +10,11 @@ namespace UI
 {
     public static class Helper
     {
+        public static string[] transactionTypes = new string[] { "Debit", "Credit" };
+        public static string[] transactionChannels = new string[] { "Online", "Branch", "ATM" };
+        public static string[] cities = new string[] { "New York", "Los Angeles", "Chicago", "Houston", "Phoenix", 
+            "Philadelphia", "San Antonio", "San Diego", "Dallas", "Austin", "Jacksonville", "Fort Worth", "Columbus", 
+            "Charlotte", "San Francisco" };
         public static string ChooseFile()
         {
             string filePath = null;

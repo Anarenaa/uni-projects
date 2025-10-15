@@ -19,12 +19,14 @@ namespace UI
         List<Transaction> transactions = new List<Transaction>();
         private readonly List<string> _recentFiles = new List<string>(5);
 
-
         public MainWindow()
         {
             InitializeComponent();
             //var reader = new TransactionCsvManager();
             //DataGridTransactions.ItemsSource = reader.Read(@"../../../../Resources/bank_transactions_data_2.csv").ToArray();
+
+            MenuItemEdit.IsEnabled = DataGridTransactions.SelectedItem != null;
+            MenuItemRemove.IsEnabled = DataGridTransactions.SelectedItem != null;
         }
         void updateRecentFiles(){
             MenuItemRecentFiles.Items.Clear();
@@ -209,6 +211,122 @@ namespace UI
         {
             Diagram diagram = new Diagram(transactions, chartManager.PlotTransactionChannel);
             diagram.Show();
+        }
+        private void DataGridTransactions_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            MenuItemEdit.IsEnabled = DataGridTransactions.SelectedIndex != -1;
+            MenuItemRemove.IsEnabled = DataGridTransactions.SelectedItem != null;
+        }
+
+        List<OperationRecord> operationRecords = new List<OperationRecord>();
+
+        private OperationRecord addOperationRecord(string operationName, string tranId)
+        {
+            return new OperationRecord
+            {
+                RecordID = operationRecords.Any<OperationRecord>() ? operationRecords.Max(r => r.RecordID) + 1 : 1,
+                TransactionID = tranId,
+                OperationName = operationName,
+                OperationDateTime = DateTime.Now
+            };
+        }
+        Random random = new Random();
+        private void MenuItemAdd_Click(object sender, RoutedEventArgs e)
+        {
+            int channelIndex = random.Next(Helper.transactionChannels.Length);
+            int typeIndex = random.Next(Helper.transactionTypes.Length);
+            int cityIndex= random.Next(Helper.cities.Length);
+
+            decimal calculatedAmount = Math.Round((decimal)random.NextDouble() * 300, 2);
+
+            Transaction newTransaction = new Transaction
+            {
+                TransactionID = "TX" + (transactions.Any<Transaction>()
+                    ? transactions.Max(t => int.Parse(t.TransactionID.Substring(2))) + 1
+                    : 1
+                ).ToString("D6"),
+                Customer = new Customer
+                {
+                    CustomerId = Guid.NewGuid().ToString("N").Substring(0, 8).ToUpper(),
+                    Age = random.Next(18, 70),
+                    Occupation = "Student"
+                },
+                TransactionAmount = calculatedAmount,
+                Account = new Account
+                {
+                    AccountId = "AC" + Guid.NewGuid().ToString("N").Substring(0, 5).ToUpper(),
+                    AccountBalance = random.Next(1000) + calculatedAmount
+                },
+                TransactionDate = DateTime.Now,
+                TransactionType = Helper.transactionTypes[typeIndex],
+                Device = new Device
+                {
+                    DeviceId = "D" + (transactions.Any<Transaction>()
+                        ? transactions.Max(t => int.Parse(t.Device.DeviceId.Substring(1))) + 1
+                        : 1
+                    ).ToString("D6"),
+                    IPAddress = $"{random.Next(1, 224)}.{random.Next(0, 255)}.{random.Next(0, 255)}.{random.Next(0, 255)}"
+                },
+                Location = Helper.cities[cityIndex],
+                MerchantID = "M" + (transactions.Any<Transaction>()
+                    ? transactions.Max(t => int.Parse(t.MerchantID.Substring(1))) + 1
+                    : 1
+                ).ToString("D3"),
+                Channel = Helper.transactionChannels[channelIndex],
+                TransactionDuration = random.Next(301),
+                PreviousTransactionDate = DateTime.Now.AddHours(-random.Next(1, 24))
+            };
+
+            transactions.Add(newTransaction);
+            operationRecords.Add(addOperationRecord("Added", newTransaction.TransactionID));
+            updateTransactionsList();
+            MessageBox.Show($"Transaction {newTransaction.TransactionID} was added.");
+
+        }
+
+        private void MenuItemEdit_Click(object sender, RoutedEventArgs e)
+        {
+            int transactionIndex = DataGridTransactions.SelectedIndex;
+            Transaction transaction = transactions[transactionIndex];
+
+            if (transaction == null) return;
+
+            EditTransaction editTransactionWindow = new EditTransaction(transactions, transaction);
+
+            var result = editTransactionWindow.ShowDialog();
+            if(result == true)
+            {
+                operationRecords.Add(addOperationRecord("Updated", transaction.TransactionID));
+                updateTransactionsList();
+                MessageBox.Show($"Transaction {transaction.TransactionID} was updated.");
+            }
+        }
+        private void MenuItemRemove_Click(object sender, RoutedEventArgs e)
+        {
+            int transactionIndex = DataGridTransactions.SelectedIndex;
+            Transaction transaction = transactions[transactionIndex];
+
+
+            MessageBoxResult result = MessageBox.Show(
+                $"Ви впевнені, що хочете видалити транзакцію {transaction.TransactionID}?",
+                "Підтвердження видалення", 
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question
+            );
+
+            if(result == MessageBoxResult.Yes)
+            {
+                transactions.Remove(transaction);
+                updateTransactionsList();
+                MessageBox.Show($"Transaction {transaction.TransactionID} was deleted.");
+                operationRecords.Add(addOperationRecord("Deleted", transaction.TransactionID));
+            }
+        }
+
+        private void MenuItemTransactionHistory_Click(object sender, RoutedEventArgs e)
+        {
+            OperationsHistoryWindow OperationsHistoryWindow = new OperationsHistoryWindow(operationRecords);
+            OperationsHistoryWindow.ShowDialog();
         }
     }
 }
