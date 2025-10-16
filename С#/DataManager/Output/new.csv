@@ -1,0 +1,2 @@
+TransactionID,TransactionAmount,TransactionDate,TransactionType,Location,MerchantID,Channel,TransactionDuration,PreviousTransactionDate,AccountID,AccountBalance,LoginAttempts,CustomerAge,CustomerOccupation,DeviceID,IPAddress
+TX000001,35.95,10/16/2025 19:12:59,Debit,San Antonio,M001,Online,299,10/16/2025 13:12:59,AC59DC4,514.95,0,23,Student,D000001,163.95.235.155

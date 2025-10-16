@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        Closing="Window_Closing">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -15,8 +16,9 @@
 
         <Menu Grid.Row="0">
             <MenuItem Header="Файл">
+                <MenuItem x:Name="MenuItemNewFile" Header="Створити новий" Click="MenuItemNewFile_Click"   />
                 <MenuItem x:Name="MenuItemOpen" Header="Відкрити" Click="MenuItemOpen_Click"/>
-                <MenuItem Header="Зберегти як">
+                <MenuItem x:Name="MenuItemSaveAs" Header="Зберегти як">
                     <MenuItem Header="CSV" Tag="csv" Click="MenuItem_Click"/>
                     <MenuItem Header="JSON" Tag="json" Click="MenuItem_Click"/>
                     <MenuItem Header="XML" Tag="xml" Click="MenuItem_Click"/>
@@ -25,17 +27,17 @@
                 <MenuItem Header="Останні файли" x:Name="MenuItemRecentFiles"/>
                 <MenuItem x:Name="MenuItemExit" Header="Вихід" Click="MenuItemExit_Click"/>
             </MenuItem>
-            <MenuItem Header="Операції">
+            <MenuItem x:Name="MenuItemOperations" Header="Операції">
                 <MenuItem x:Name="MenuItemAdd" Header="Додати" Click="MenuItemAdd_Click"/>
                 <MenuItem x:Name="MenuItemEdit" Header="Корегувати" Click="MenuItemEdit_Click"/>
                 <MenuItem x:Name="MenuItemRemove" Header="Видалити" Click="MenuItemRemove_Click"/>
                 <MenuItem x:Name="MenuItemTransactionHistory" Header="Історія оперцій" Click="MenuItemTransactionHistory_Click"/>
             </MenuItem>
-            <MenuItem Header="Звіти">
+            <MenuItem x:Name="MenuItemReports" Header="Звіти">
                 <MenuItem x:Name="xlsxReport" Header="Згенерувати XLSX-звіт" Click="xlsxReport_Click"/>
                 <MenuItem x:Name="docxReport" Header="Згенерувати DOCX-звіт" Click="docxReport_Click"/>
             </MenuItem>
-            <MenuItem Header="Графіки">
+            <MenuItem x:Name="MenuItemCharts" Header="Графіки">
                 <MenuItem x:Name="MenuItemTransactionDate" Header="Transaction Over Time" Click="MenuItemTransactionDate_Click"/>
                 <MenuItem x:Name="MenuItemTransactionAmount" Header="Transaction Amounts" Click="MenuItemTransactionAmount_Click"/>
                 <MenuItem x:Name="MenuItemTransactionType" Header="Transaction Types" Click="MenuItemTransactionType_Click"/>

@@ -1,11 +1,13 @@
+using System.IO;
+using System.Transactions;
 using System.Windows;
 using System.Windows.Controls;
+using Core;
+using Transaction = Core.Transaction;
 using Infrastructure;
 using Microsoft.Win32;
-using System.IO;
-using static UI.Helper;
-using Core;
 using UI.Windows;
+using static UI.Helper;
 
 namespace UI
 {
@@ -19,17 +21,22 @@ namespace UI
         List<Transaction> transactions = new List<Transaction>();
         private readonly List<string> _recentFiles = new List<string>(5);
 
-        public MainWindow()
-        {
-            InitializeComponent();
-            //var reader = new TransactionCsvManager();
-            //DataGridTransactions.ItemsSource = reader.Read(@"../../../../Resources/bank_transactions_data_2.csv").ToArray();
+        void updateMenuItemsState()
+        {            
+            bool hasFile = !string.IsNullOrEmpty(path);
+            
+            MenuItemSaveAs.IsEnabled = hasFile;
+            MenuItemAdd.IsEnabled = hasFile;
 
-            MenuItemEdit.IsEnabled = DataGridTransactions.SelectedItem != null;
-            MenuItemRemove.IsEnabled = DataGridTransactions.SelectedItem != null;
+            MenuItemOperations.IsEnabled = hasFile;
+            MenuItemReports.IsEnabled = hasFile;
+            MenuItemCharts.IsEnabled = hasFile;
         }
-        void updateRecentFiles(){
+
+        void updateRecentFiles()
+        {
             MenuItemRecentFiles.Items.Clear();
+            path = StatusBarPath.Content?.ToString();
             foreach (var path in _recentFiles)
             {
                 var menuItem = new MenuItem { Header = path, Tag = path };
@@ -38,57 +45,36 @@ namespace UI
             }
         }
 
-        private void RecentFile_Click(object sender, RoutedEventArgs e)
+        void fileExit()
         {
-            var menuItem = sender as MenuItem;
-            var filePath = menuItem.Tag.ToString();
+            MessageBoxResult result = MessageBox.Show(
+                $"Бажаєте зберегти файл?",
+                "Підтвердження",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question
+            );
 
-            // Move the clicked file to the top of the recent list
-            _recentFiles.Remove(filePath);
-            _recentFiles.Insert(0, filePath);
-            updateRecentFiles();
-
-            // Load the data
-            StatusBarPath.Content = filePath;
-            path = filePath;
-            string extension = Path.GetExtension(path).ToLower().TrimStart('.');
-            _manager = Helper.GetManager(extension);
-            loadData(path);
-        }
-        
-        private void MenuItemOpen_Click(object sender, RoutedEventArgs e)
-        {
-            var dialog = new OpenFileDialog();
-            dialog.Filter = $"CSV files (*.csv)|*.csv|JSON files (*.json)|*.json|XML files (*.xml)|*.xml|XSLX files (*.xlsx)|*.xlsx";
-
-            var result = dialog.ShowDialog();
-
-            if (result == true)
+            try
             {
-                StatusBarPath.Content = dialog.FileName;
-                string path = dialog.FileName;
-
-                // Update recent files list
-                _recentFiles.Remove(path); // Remove if it already exists to move it to the top
-                _recentFiles.Insert(0, path); // Add to the top of the list
-                if (_recentFiles.Count > 5) // Keep only the last 5 files
+                if (result == MessageBoxResult.Yes && !string.IsNullOrEmpty(path) && File.Exists(path))
                 {
-                    _recentFiles.RemoveAt(5);
+                    string extension = Path.GetExtension(path).ToLower().TrimStart('.');
+                    _manager = Helper.GetManager(extension);
+                    _manager.Write(path, transactions);
+                    MessageBox.Show("File saved successfully.");
                 }
-
-                // TODO: Update the UI to show the recent files menu
-
-                string extension = Path.GetExtension(path).ToLower().TrimStart('.');
-
-                _manager = Helper.GetManager(extension);
-
-                loadData(path);
-
-                MessageBox.Show($"File loaded: {extension.ToUpper()}");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error saving file: {ex.Message}");
+            }
+            finally
+            {
+                path = null;
+                StatusBarPath.Content = null;
                 updateRecentFiles();
             }
         }
-
         void updateTransactionsList()
         {
             DataGridTransactions.ItemsSource = null;
@@ -120,7 +106,6 @@ namespace UI
             {
                 transactions = _manager.Read(dataPath);
                 updateTransactionsList();
-                //MenuItemDiagrams.ItemsSource = typeof(Transaction).GetProperties().Select(p => p.Name).ToList();
             }
             catch (Exception ex)
             {
@@ -129,6 +114,95 @@ namespace UI
             }
         }
 
+        //Window
+        public MainWindow()
+        {
+            InitializeComponent();
+            
+            updateMenuItemsState();
+            
+            MenuItemEdit.IsEnabled = DataGridTransactions.SelectedItem != null;
+            MenuItemRemove.IsEnabled = DataGridTransactions.SelectedItem != null;
+
+            updateRecentFiles();
+
+        }
+        private void Window_Closing(object sender, EventArgs e)
+        {
+            if (StatusBarPath.Content != null)
+            {
+                fileExit();
+            }
+        }
+        //----------------------------------------------------------------
+
+        //File 
+        private void MenuItemNewFile_Click(object sender, RoutedEventArgs e)
+        {
+            if (StatusBarPath.Content != null)
+            {
+                fileExit();
+            }
+
+            var dialog = new SaveFileDialog();
+            dialog.Filter = $"CSV files (*.csv)|*.csv";
+
+            var result = dialog.ShowDialog();
+
+            if (result == true)
+            {
+                string filePath = dialog.FileName;
+
+                if (filePath != null)
+                {
+                    StatusBarPath.Content = filePath;
+                    path = filePath;
+                    string extension = Path.GetExtension(path).ToLower().TrimStart('.');
+                    _manager = Helper.GetManager(extension);
+                    transactions.Clear();
+                    operationRecords.Clear();
+                    updateTransactionsList();
+                    updateMenuItemsState();
+                }
+            }
+        }
+        private void MenuItemOpen_Click(object sender, RoutedEventArgs e)
+        {
+            if (StatusBarPath.Content != null)
+            {
+                fileExit();
+            }
+
+            var dialog = new OpenFileDialog();
+            dialog.Filter = $"CSV files (*.csv)|*.csv|JSON files (*.json)|*.json|XML files (*.xml)|*.xml|XSLX files (*.xlsx)|*.xlsx";
+
+            var result = dialog.ShowDialog();
+
+            if (result == true)
+            {
+                string filePath = dialog.FileName;
+                path = filePath;
+                StatusBarPath.Content = filePath;
+                
+                _recentFiles.Remove(filePath);
+                if (_recentFiles.Count > 5)
+                {
+                    _recentFiles.RemoveAt(5);
+                }
+                _recentFiles.Insert(0, filePath);
+
+                string extension = Path.GetExtension(path).ToLower().TrimStart('.');
+
+                _manager = Helper.GetManager(extension);
+
+                loadData(path);
+
+                MessageBox.Show($"File loaded: {extension.ToUpper()}");
+                operationRecords.Clear();
+                updateMenuItemsState();
+            }
+        }
+        //Save as
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             var extension = (sender as MenuItem).Tag.ToString();
@@ -140,7 +214,6 @@ namespace UI
 
             if (result == true)
             {
-                //path = toolStripStatusLabelPath.Text = dialog.FileName;
                 path = dialog.FileName;
                 _manager = Helper.GetManager(extension);
                 _manager.Write(path, transactions);
@@ -149,13 +222,40 @@ namespace UI
                 MessageBox.Show($"File saved: {extension.ToUpper()}");
             }
         }
+        private void RecentFile_Click(object sender, RoutedEventArgs e)
+        {
+            var menuItem = sender as MenuItem;
+            var filePath = menuItem.Tag.ToString();
 
+            _recentFiles.Remove(filePath);
+            _recentFiles.Insert(0, filePath);
+
+            StatusBarPath.Content = filePath;
+            path = filePath;
+            string extension = Path.GetExtension(path).ToLower().TrimStart('.');
+            _manager = Helper.GetManager(extension);
+            loadData(path);
+        }
         private void MenuItemExit_Click(object sender, RoutedEventArgs e)
         {
+            if(StatusBarPath.Content == null)
+            {
+                Application.Current.Shutdown();
+                return;
+            }
+            fileExit();
             DataGridTransactions.ItemsSource = null;
             StatusBarPath.Content = StatusBarQuantity.Content = StatusBarLastOperationTime.Content = null;
+            operationRecords.Clear();
+
+            MenuItemSaveAs.IsEnabled = path != null;
+            MenuItemAdd.IsEnabled = path != null;
+            updateMenuItemsState();
         }
 
+        //----------------------------------------------------------------
+
+        // Reports
         private void xlsxReport_Click(object sender, RoutedEventArgs e)
         {
             var generator = new TransactionsXlsxReport();
@@ -188,8 +288,9 @@ namespace UI
                 generator.GenerateTransactionsReport(transactions, filePath);
             }
         }
+        //----------------------------------------------------------------
 
-
+        // Charts
         TransactionChartManager chartManager = new TransactionChartManager();
         private void MenuItemTransactionDate_Click(object sender, RoutedEventArgs e)
         {
@@ -212,13 +313,15 @@ namespace UI
             Diagram diagram = new Diagram(transactions, chartManager.PlotTransactionChannel);
             diagram.Show();
         }
+        //----------------------------------------------------------------
+
+        // CRUD Operations
+        List<OperationRecord> operationRecords = new List<OperationRecord>();
         private void DataGridTransactions_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             MenuItemEdit.IsEnabled = DataGridTransactions.SelectedIndex != -1;
             MenuItemRemove.IsEnabled = DataGridTransactions.SelectedItem != null;
         }
-
-        List<OperationRecord> operationRecords = new List<OperationRecord>();
 
         private OperationRecord addOperationRecord(string operationName, string tranId)
         {
@@ -322,11 +425,11 @@ namespace UI
                 operationRecords.Add(addOperationRecord("Deleted", transaction.TransactionID));
             }
         }
-
         private void MenuItemTransactionHistory_Click(object sender, RoutedEventArgs e)
         {
             OperationsHistoryWindow OperationsHistoryWindow = new OperationsHistoryWindow(operationRecords);
             OperationsHistoryWindow.ShowDialog();
         }
+        //----------------------------------------------------------------
     }
 }

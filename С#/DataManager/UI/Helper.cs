@@ -21,7 +21,6 @@ namespace UI
 
             var openFileDialog = new Microsoft.Win32.OpenFileDialog
             {
-                Title = "Виберіть файл для завантаження",
                 Filter = "Текстові файли|*.txt|CSV файли (*.csv)|*.csv|XML файли (*.xml)|*.xml|JSON Files (*.json)|*.json|Excel файли(*.xlsx)|*.xlsx"
             };
             bool? res = openFileDialog.ShowDialog();
@@ -48,5 +47,6 @@ namespace UI
                     throw new NotSupportedException($"File extension '{ext}' is not supported.");
             }
         }
+
     }
 }

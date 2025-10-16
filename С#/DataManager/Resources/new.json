@@ -1,0 +1,152 @@
+﻿[
+  {
+    "TransactionID": "TX000001",
+    "TransactionAmount": 116.20,
+    "TransactionDate": "2025-10-16T23:45:54.2311094+03:00",
+    "TransactionType": "Debit",
+    "Location": "Charlotte",
+    "MerchantID": "M001",
+    "Channel": "ATM",
+    "TransactionDuration": 150,
+    "PreviousTransactionDate": "2025-10-16T04:45:54.2311194+03:00",
+    "Account": {
+      "AccountId": "AC22B2F",
+      "AccountBalance": 1034.20,
+      "LoginAttempts": 0
+    },
+    "Customer": {
+      "CustomerId": "F4E9A8A0",
+      "Age": 32,
+      "Occupation": "Student"
+    },
+    "Device": {
+      "DeviceId": "D000001",
+      "IPAddress": "208.41.167.104"
+    }
+  },
+  {
+    "TransactionID": "TX000002",
+    "TransactionAmount": 251.78,
+    "TransactionDate": "2025-10-16T23:45:56.6637965+03:00",
+    "TransactionType": "Credit",
+    "Location": "Houston",
+    "MerchantID": "M002",
+    "Channel": "Branch",
+    "TransactionDuration": 27,
+    "PreviousTransactionDate": "2025-10-16T02:45:56.663809+03:00",
+    "Account": {
+      "AccountId": "ACD4931",
+      "AccountBalance": 1207.78,
+      "LoginAttempts": 0
+    },
+    "Customer": {
+      "CustomerId": "29462126",
+      "Age": 51,
+      "Occupation": "Student"
+    },
+    "Device": {
+      "DeviceId": "D000002",
+      "IPAddress": "142.75.119.128"
+    }
+  },
+  {
+    "TransactionID": "TX000003",
+    "TransactionAmount": 128.03,
+    "TransactionDate": "2025-10-16T23:45:58.7513293+03:00",
+    "TransactionType": "Credit",
+    "Location": "Chicago",
+    "MerchantID": "M003",
+    "Channel": "ATM",
+    "TransactionDuration": 132,
+    "PreviousTransactionDate": "2025-10-16T03:45:58.7513565+03:00",
+    "Account": {
+      "AccountId": "AC9F62B",
+      "AccountBalance": 218.03,
+      "LoginAttempts": 0
+    },
+    "Customer": {
+      "CustomerId": "62AF4F8C",
+      "Age": 34,
+      "Occupation": "Student"
+    },
+    "Device": {
+      "DeviceId": "D000003",
+      "IPAddress": "174.113.144.111"
+    }
+  },
+  {
+    "TransactionID": "TX000004",
+    "TransactionAmount": 44.59,
+    "TransactionDate": "2025-10-16T23:46:01.2638072+03:00",
+    "TransactionType": "Debit",
+    "Location": "Dallas",
+    "MerchantID": "M004",
+    "Channel": "Branch",
+    "TransactionDuration": 208,
+    "PreviousTransactionDate": "2025-10-16T09:46:01.2640029+03:00",
+    "Account": {
+      "AccountId": "AC0EA33",
+      "AccountBalance": 789.59,
+      "LoginAttempts": 0
+    },
+    "Customer": {
+      "CustomerId": "687470D9",
+      "Age": 23,
+      "Occupation": "Student"
+    },
+    "Device": {
+      "DeviceId": "D000004",
+      "IPAddress": "90.253.249.254"
+    }
+  },
+  {
+    "TransactionID": "TX000005",
+    "TransactionAmount": 86.92,
+    "TransactionDate": "2025-10-16T23:46:03.2636148+03:00",
+    "TransactionType": "Debit",
+    "Location": "Chicago",
+    "MerchantID": "M005",
+    "Channel": "Online",
+    "TransactionDuration": 12,
+    "PreviousTransactionDate": "2025-10-16T17:46:03.2636474+03:00",
+    "Account": {
+      "AccountId": "AC58AA6",
+      "AccountBalance": 887.92,
+      "LoginAttempts": 0
+    },
+    "Customer": {
+      "CustomerId": "827753D0",
+      "Age": 45,
+      "Occupation": "Student"
+    },
+    "Device": {
+      "DeviceId": "D000005",
+      "IPAddress": "107.96.59.130"
+    }
+  },
+  {
+    "TransactionID": "TX000006",
+    "TransactionAmount": 224.32,
+    "TransactionDate": "2025-10-16T23:46:05.295382+03:00",
+    "TransactionType": "Credit",
+    "Location": "San Antonio",
+    "MerchantID": "M006",
+    "Channel": "ATM",
+    "TransactionDuration": 20,
+    "PreviousTransactionDate": "2025-10-16T03:46:05.2954796+03:00",
+    "Account": {
+      "AccountId": "AC39E8B",
+      "AccountBalance": 630.32,
+      "LoginAttempts": 0
+    },
+    "Customer": {
+      "CustomerId": "6EDFB62A",
+      "Age": 18,
+      "Occupation": "Student"
+    },
+    "Device": {
+      "DeviceId": "D000006",
+      "IPAddress": "67.187.234.8"
+    }
+  }
+]

@@ -1,0 +1,3 @@
+TransactionID,TransactionAmount,TransactionDate,TransactionType,Location,MerchantID,Channel,TransactionDuration,PreviousTransactionDate,AccountID,AccountBalance,LoginAttempts,CustomerAge,CustomerOccupation,DeviceID,IPAddress
+TX000001,150.51,10/16/2025 19:04:01,Credit,Dallas,M001,Online,250,10/16/2025 11:04:01,AC45C2B,607.51,0,51,Student,D000001,7.82.229.142
+TX000002,228.24,10/16/2025 19:04:03,Credit,Dallas,M002,ATM,72,10/16/2025 12:04:03,AC8DD01,379.24,0,38,Student,D000002,121.111.180.178
