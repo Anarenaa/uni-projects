@@ -1,0 +1,136 @@
+﻿<Window x:Class="WpfApp.Windows.AddEditBugWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp.Windows"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Add/Edit" Height="600" Width="800">
+    <Grid Margin="20">
+        <Grid.Resources>
+            <Style TargetType="Label">
+                <Setter Property="Foreground" Value="#333" />
+                <Setter Property="FontWeight" Value="SemiBold" />
+                <Setter Property="Margin" Value="0,10,0,5" />
+            </Style>
+            <Style TargetType="TextBox">
+                <Setter Property="TextWrapping" Value="Wrap" />
+                <Setter Property="AcceptsReturn" Value="True" />
+                <Setter Property="Margin" Value="0,0,0,15" />
+                <Setter Property="Padding" Value="10" />
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="BorderBrush" Value="#FFB0B0B0" />
+                <Style.Triggers>
+                    <Trigger Property="Validation.HasError" Value="True">
+                        <Setter Property="BorderBrush" Value="#FF5252" />
+                        <Setter Property="BorderThickness" Value="1.5" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Resources>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Add error*:" Foreground="#E53935" FontWeight="Bold"/>
+        <TextBox Grid.Row="1" 
+             x:Name="TextBoxError"
+             Style="{StaticResource MaterialDesignOutlinedTextBox}"
+             VerticalContentAlignment="Top"
+             materialDesign:HintAssist.Hint="Enter error details here..."
+             materialDesign:HintAssist.Foreground="Black"/>
+
+        <Label Grid.Row="2" Content="Add context:"/>
+        <TextBox x:Name="TextBoxContext"
+             Grid.Row="3"
+             Style="{StaticResource MaterialDesignOutlinedTextBox}"
+             VerticalContentAlignment="Top"
+             materialDesign:HintAssist.Hint="Add context..."/>
+
+        <Label Grid.Row="4" Content="Add solution*:" Foreground="#E53935" FontWeight="Bold"/>
+        <TextBox x:Name="TextBoxSolution"
+             Grid.Row="5"
+             Style="{StaticResource MaterialDesignOutlinedTextBox}"
+             VerticalContentAlignment="Top"
+             materialDesign:HintAssist.Hint="Describe the solution..."
+             materialDesign:HintAssist.Foreground="Black"/>
+
+        <StackPanel Grid.Row="6" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10">
+            <Button Content="Add tags" 
+                Style="{StaticResource MaterialDesignOutlinedButton}"
+                Foreground="#E53935"
+                BorderBrush="#E53935"
+                Margin="0,0,10,0"
+                Padding="15,5"/>
+            <Button Content="Save" 
+                Style="{StaticResource MaterialDesignRaisedButton}"
+                Background="#E53935"
+                Foreground="White"
+                Padding="30,5"/>
+        </StackPanel>
+
+        <Border Grid.Row="7" 
+        BorderThickness="0,1,0,0" 
+        BorderBrush="#FFE0E0E0" 
+        Margin="0,15,0,0"
+        Padding="10">
+            <ItemsControl x:Name="TagsItemsControl">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Background="{Binding AccentColor}" 
+                                CornerRadius="4" 
+                                Margin="2" 
+                                Padding="4,2,8,2">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Name}" 
+                                            Foreground="White" 
+                                            FontWeight="SemiBold"
+                                            VerticalAlignment="Center"
+                                            Margin="4,0,4,0"/>
+                                <Button Content="×" 
+                                        CommandParameter="{Binding}"
+                                        Style="{StaticResource MaterialDesignToolButton}"
+                                        Foreground="White"
+                                        Padding="4,0"
+                                        FontSize="14"
+                                        Cursor="Hand"/>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+                <ItemsControl.Style>
+                    <Style TargetType="ItemsControl">
+                        <Style.Triggers>
+                            <Trigger Property="HasItems" Value="False">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate>
+                                            <TextBlock Text="No tags added" 
+                                               Foreground="#9E9E9E" 
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"/>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </ItemsControl.Style>
+            </ItemsControl>
+        </Border>
+    </Grid>
+</Window>
