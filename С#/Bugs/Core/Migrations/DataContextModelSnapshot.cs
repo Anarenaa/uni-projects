@@ -39,7 +39,7 @@ namespace Core.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Records");
+                    b.ToTable("Records", (string)null);
                 });
 
             modelBuilder.Entity("Core.Models.RecordTag", b =>
@@ -54,7 +54,7 @@ namespace Core.Migrations
 
                     b.HasIndex("TagId");
 
-                    b.ToTable("RecordTag");
+                    b.ToTable("RecordTag", (string)null);
                 });
 
             modelBuilder.Entity("Core.Models.Tag", b =>
@@ -70,7 +70,7 @@ namespace Core.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Tags");
+                    b.ToTable("Tags", (string)null);
                 });
 
             modelBuilder.Entity("Core.Models.RecordTag", b =>

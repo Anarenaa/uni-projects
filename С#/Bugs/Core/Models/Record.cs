@@ -7,7 +7,7 @@ namespace Core.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public uint? Id { get; set; }
+        public int? Id { get; set; }
         [Required]
         public required string Error { get; set; }
         public string? Context { get; set; }
