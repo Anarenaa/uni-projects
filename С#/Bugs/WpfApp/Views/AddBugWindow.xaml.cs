@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace WpfApp.Windows
 {
     /// <summary>
-    /// Interaction logic for AddEditBugWindow.xaml
+    /// Interaction logic for AddBugWindow.xaml
     /// </summary>
-    public partial class AddEditBugWindow : Window
+    public partial class AddBugWindow : Window
     {
-        public AddEditBugWindow()
+        public AddBugWindow()
         {
             InitializeComponent();
         }

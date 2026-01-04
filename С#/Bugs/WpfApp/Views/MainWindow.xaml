@@ -165,7 +165,7 @@
             </StatusBarItem>
 
             <StatusBarItem Grid.Column="2">
-                <Button Content="Add/Edit" HorizontalAlignment="Right" Background="Red"/>
+                <Button Content="Add New" HorizontalAlignment="Right" Background="Red"/>
             </StatusBarItem>
         </StatusBar>
 
