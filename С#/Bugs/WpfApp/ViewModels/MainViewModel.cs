@@ -1,6 +1,13 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows.Media;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.Messaging;
+using Services;
+using WpfApp.Messages;
+using WpfApp.Models;
+using WpfApp.Views;
+using WpfApp.Windows;
 
 namespace WpfApp.ViewModels
 {
@@ -51,6 +58,8 @@ namespace WpfApp.ViewModels
             Brushes.LightPink
         };
 
+        private readonly RecordService _recordService;
+
         public ObservableCollection<FilterItem> Tags { get; set; } = new();
         public ObservableCollection<BugItem> Bugs { get; } = new();
 
@@ -58,39 +67,50 @@ namespace WpfApp.ViewModels
 
         public MainViewModel()
         {
+            _recordService = new RecordService();
+
             Bugs.CollectionChanged += (s, e) => OnPropertyChanged(nameof(BugsCount));
 
             for (int i = 0; i < names.Count; i++)
             {
                 Tags.Add(new FilterItem
                 {
-                    Name = names[i],
-                    AccentColor = colors[i % colors.Length]
+                    TagItem = new TagItem
+                    {
+                        Name = names[i],
+                        AccentColor = colors[i % colors.Length]
+                    },
+                    IsSelected = false
                 });
             }
-            Bugs.Add(
-                new BugItem
-                {
-                    Error = "System.InvalidOperationException: The seed entity for entity " +
-                    "type 'OfficersRoles (Dictionary<string, object>)' cannot be added " +
-                    "because the value provided for the property 'OfficersId' is not compatible " +
-                    "with the property type 'long'.",
-                    Solution = "instead of id like \"1\", \"2\" we write \"1L\", \"2L\" // L = long",
-                    Tags = new(){Tags[0], Tags[1]}
-                }
-            );
-            Bugs.Add(
-                new BugItem
-                {
-                    Error = "System.InvalidOperationException: The seed entity for entity " +
-                    "type 'OfficersRoles (Dictionary<string, object>)' cannot be added " +
-                    "because the value provided for the property 'OfficersId' is not compatible " +
-                    "with the property type 'long'.",
-                    Context = "During migration",
-                    Solution = "instead of id like \"1\", \"2\" we write \"1L\", \"2L\" // L = long",
-                    Tags = new() { Tags[1], Tags[3] }
-                }
-            );
+            foreach (var record in _recordService.GetAllRecords())
+            {
+                Bugs.Add(
+                    new BugItem
+                    {
+                        Error = record.Error,
+                        Context = record.Context,
+                        Solution = record.Solution
+                    }
+                );
+            }
+            //get message about new bug added
+            WeakReferenceMessenger.Default.Register<BugAddedMessage>(this, (r, m) =>
+            {
+                Bugs.Add(m.NewBug);
+            });
+        }
+
+        [RelayCommand]
+        private void AddNewBug()
+        {
+            var addBugViewModel = new AddBugViewModel();
+            var addBugWindow = new AddBugWindow();
+            var res = addBugWindow.ShowDialog();
+            if (res == true)
+            {
+                addBugWindow.Close();
+            }
         }
     }
 

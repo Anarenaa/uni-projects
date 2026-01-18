@@ -1,14 +1,12 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Windows.Media;
+using WpfApp.Models;
 
 namespace WpfApp.ViewModels
 {
     public class FilterItem : INotifyPropertyChanged
     {
-        public required string Name { get; set; }
-
-        public required Brush AccentColor { get; set; }
+        public TagItem TagItem { get; set; }
 
         private bool _isSelected = false;
         public bool IsSelected

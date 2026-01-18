@@ -1,9 +1,9 @@
-﻿using System.ComponentModel;
-using System.Windows;
+﻿using System.Windows;
+using WpfApp.Models;
 
 namespace WpfApp.ViewModels
 {
-    class BugItem
+    public class BugItem
     {
         public required string Error { get; set; }
         public string? Context { get; set; }
@@ -11,6 +11,6 @@ namespace WpfApp.ViewModels
             ? Visibility.Collapsed
             : Visibility.Visible;
         public required string Solution { get; set; }
-        public List<FilterItem> Tags { get; set; }
+        public List<TagItem> Tags { get; set; }
     }
 }

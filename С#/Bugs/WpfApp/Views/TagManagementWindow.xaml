@@ -1,0 +1,33 @@
+﻿<Window x:Class="WpfApp.Views.TagManagementWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp.Views"
+        mc:Ignorable="d"
+        Title="TagManagementWindow" Height="450" Width="400">
+    <Grid>
+        <DataGrid ItemsSource="{Binding Tags}"
+                  Style="{x:Null}"
+                  Name="TagsDataGrid"
+                  Background="White"
+                  HeadersVisibility="Column"
+                  AutoGenerateColumns="False"
+                  CanUserDeleteRows="True"
+                  SelectionUnit="FullRow"
+                  CanUserAddRows="True"
+                  Margin="10,10,10,50"
+                  RowEditEnding="TagsDataGrid_RowEditEnding"
+                  PreviewKeyDown="TagsDataGrid_PreviewKeyDown">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Tag Name" Binding="{Binding Name}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Add Tag"
+                Width="100" 
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Right"
+                Command="{Binding AddTagToBugCommand}"
+                CommandParameter="{Binding SelectedItem, ElementName=TagsDataGrid}" /> 
+    </Grid>
+</Window>
