@@ -22,20 +22,24 @@ namespace WpfApp.Views
         {
             this.DialogResult = true;
         }
+
         private void TagsDataGrid_RowEditEnding(object sender, DataGridRowEditEndingEventArgs e)
         {
-            if (e.EditAction != DataGridEditAction.Commit)
-                return;
-            if (DataContext is TagManagementViewModel vm && e.Row.Item is Tag tag)
+            if(e.EditAction == DataGridEditAction.Commit)
             {
-                vm.AddNewTag(tag);
+                var viewModel = DataContext as TagManagementViewModel;
+                if (viewModel != null)
+                {
+                    var selectedTagItem = e.Row.Item as Tag;
+                    if (selectedTagItem != null)
+                        viewModel.CheckTagName(selectedTagItem.Name);
+                }
             }
         }
 
-        private void TagsDataGrid_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-
+            //зробити збереження списку тегів (якщо змінено) до бази даних
         }
-
     }
 }

@@ -104,10 +104,11 @@
                         <Border 
                                 CornerRadius="4" 
                                 Margin="2" 
-                                Padding="4,2,8,2">
+                                Padding="4,2,8,2"
+                                Background="{Binding AccentColor}">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="{Binding Name}" 
-                                            Foreground="White" 
+                                            Foreground="Black" 
                                             FontWeight="SemiBold"
                                             VerticalAlignment="Center"
                                             Margin="4,0,4,0"/>
@@ -115,7 +116,7 @@
                                         Command="{Binding DataContext.RemoveTagFromBugCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
                                         CommandParameter="{Binding}"
                                         Style="{StaticResource MaterialDesignToolButton}"
-                                        Foreground="White"
+                                        Foreground="Black"
                                         Padding="4,0"
                                         FontSize="14"
                                         Cursor="Hand"/>

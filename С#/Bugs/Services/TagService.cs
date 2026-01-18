@@ -14,7 +14,7 @@ namespace Services
         {
             if(string.IsNullOrEmpty(tag.Name))
                 throw new Exception("Tag name is required.");
-            if(tag.Name.Length > 50)
+            if (tag.Name.Length > 50)
                 throw new Exception("Tag name is too long.");
         }
         public List<Tag> GetAllTags()
@@ -41,6 +41,15 @@ namespace Services
         public void DeleteTag(Tag tag)
         {
             _tagRepository.Delete(tag);
+            _tagRepository.SaveChanges();
+        }
+        public void ReplaceAllTags(IEnumerable<Tag> newTags)
+        {
+            foreach (var tag in newTags)
+            {
+                validateTag(tag);
+            }
+            _tagRepository.ReplaceAllTags(newTags);
             _tagRepository.SaveChanges();
         }
     }

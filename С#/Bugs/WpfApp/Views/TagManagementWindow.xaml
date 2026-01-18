@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp.Views"
         mc:Ignorable="d"
-        Title="TagManagementWindow" Height="450" Width="400">
+        Title="TagManagementWindow" Height="450" Width="400"
+        Closing="Window_Closing">
     <Grid>
         <DataGrid ItemsSource="{Binding Tags}"
                   Style="{x:Null}"
@@ -17,8 +18,7 @@
                   SelectionUnit="FullRow"
                   CanUserAddRows="True"
                   Margin="10,10,10,50"
-                  RowEditEnding="TagsDataGrid_RowEditEnding"
-                  PreviewKeyDown="TagsDataGrid_PreviewKeyDown">
+                  RowEditEnding="TagsDataGrid_RowEditEnding">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Tag Name" Binding="{Binding Name}" Width="*"/>
             </DataGrid.Columns>

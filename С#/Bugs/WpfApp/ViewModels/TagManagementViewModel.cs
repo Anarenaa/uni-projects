@@ -1,9 +1,12 @@
 ﻿using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Media;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Core.Models;
+using Microsoft.EntityFrameworkCore;
 using Services;
 using WpfApp.Models;
 
@@ -13,7 +16,7 @@ namespace WpfApp.ViewModels
     {
         [ObservableProperty]
         private ObservableCollection<Tag> _tags = new();
-        
+
         private readonly Brush[] colors = new[]
         {
             Brushes.Yellow,
@@ -38,6 +41,8 @@ namespace WpfApp.ViewModels
 
         [ObservableProperty]
         private string _tagName;
+        [ObservableProperty]
+        private bool _isModified = false;
 
 
         private readonly TagService _tagService;
@@ -51,34 +56,85 @@ namespace WpfApp.ViewModels
             {
                 _tags.Add(tag);
             }
+
+            Tags.CollectionChanged += Tags_CollectionChanged;
+        }
+        private void Tags_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
+        {
+            IsModified = true;
+
+            if (e.NewItems != null)
+            {
+                foreach (var tag in e.NewItems)
+                {
+                    if (tag is INotifyPropertyChanged npc)
+                        npc.PropertyChanged += Tag_PropertyChanged;
+                }
+            }
+
+            if (e.OldItems != null)
+            {
+                foreach (var tag in e.OldItems)
+                {
+                    if (tag is INotifyPropertyChanged npc)
+                        npc.PropertyChanged -= Tag_PropertyChanged;
+                }
+            }
+        }
+        private void Tag_PropertyChanged(object? sender, PropertyChangedEventArgs e)
+        {
+            IsModified = true;
         }
 
-        public void AddNewTag(Tag selectedTag)
+        [RelayCommand]
+        private void AddTagToBug(object parameter)
         {
-            if (string.IsNullOrWhiteSpace(selectedTag.Name))
+            if (parameter is not Tag selectedTag)
                 return;
 
             try
             {
-                _tagService.AddTag(selectedTag);
+                if (IsModified)
+                {
+                    _tagService.ReplaceAllTags(Tags);
+                    IsModified = false;
+                }
             }
             catch(Exception ex)
             {
-                MessageBox.Show($"Error adding tag: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Failed to save tags: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-        }
 
-        [RelayCommand]
-        private void AddTagToBug(Tag selectedTag)
-        {
             var tagItem = new TagItem
             {
                 Id = selectedTag.Id,
                 Name = selectedTag.Name,
-                AccentColor = colors[selectedTag.Id.Value % colors.Length]
+                AccentColor = colors[selectedTag.Id.GetValueOrDefault() % colors.Length]
             };
-            _tagsInBug.Add(tagItem);
+
+            if(_tagsInBug.Any(t => t.Id == tagItem.Id))
+            {
+                MessageBox.Show("Tag is already added", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            try
+            {
+                _tagsInBug.Add(tagItem);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to add tag: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+        public void CheckTagName(string tagName)
+        {
+            if (Tags.Any(t => t.Name == tagName))
+            {
+                MessageBox.Show("Tag name already exists.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
         }
     }
 }
