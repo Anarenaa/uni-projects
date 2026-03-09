@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starter</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        /*пункти зробила в css, тому що псевдоелементом їх легше змінювати і стилізувати, і вони не мають семантичної ролі*/
+        .list-star::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            width: 1.25rem;
+            height: 1.25rem;
+            margin-top: 0.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to right, #a3e635, #22c55e);
+            background-clip: text;
+            color: transparent;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+
+<body class="flex justify-center">
+    <div class="relative border border-gray-200 rounded-xl m-4 px-10 py-6 shadow-lg w-md
+    before:absolute before:top-0 before:left-0 before:w-full before:h-2 before:bg-linear-to-r before:from-green-500 before:to-cyan-500 before:rounded-t-xl
+    hover:outline">
+        <h2 class="font-semibold mb-4 text-2xl">Starter</h2>
+        <span class="inline-block px-2 bg-gray-100 rounded-md font-semibold text-gray-700 mb-2">7-days free then:</span>
+        <p class="text-gray-500 mb-2">
+            <span class="text-4xl font-bold text-black">$83.25</span>/month
+        </p>
+        <p class="text-gray-600">Billed yearly at <span class="text-black font-medium">$999.00</span></p>
+        <button class="w-full bg-gray-200 rounded-lg py-3 my-4 cursor-pointer
+        font-medium text-lg text-gray-600
+        active:bg-white active:outline active:text-black">
+            Downgrade to Starter
+        </button>
+
+        <hr class="text-gray-200" />
+
+        <ul class="my-4 flex flex-col gap-y-2">
+            <li class="pl-7 font-medium relative list-star">
+                <p class="text-lg">Primary user + 0 free team members</p>
+                <p class="text-gray-400">(extra team members for $35/month)</p>
+            </li>
+            <li class="pl-7 font-medium relative list-star">
+                <p class="text-lg">Save unlimited properties</p>
+            </li>
+            <li class="pl-7 font-medium relative list-star">
+                <p class="text-lg"><b>10 000</b> exports</p>
+                <p class="text-gray-400">(additional exports at $0.02 each)</p>
+            </li>
+            <li class="pl-7 font-medium relative list-star">
+                <p class="text-lg"><b>500</b> free skip traces</p>
+                <p class="text-gray-400">(additional skip tracing at $0.08 each)</p>
+            </li>
+            <li class="pl-7 font-medium relative list-star">
+                <p class="text-lg">Imports $0.01</p>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
