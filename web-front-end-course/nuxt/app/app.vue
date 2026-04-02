@@ -35,6 +35,9 @@ useSeoMeta({
         <NuxtLink to="/products">
           Products
         </NuxtLink>
+        <NuxtLink to="/table">
+          Table
+        </NuxtLink>
       </template>
 
       <template #right>
