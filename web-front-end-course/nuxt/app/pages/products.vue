@@ -2,7 +2,7 @@
   useHead({
     title: 'Products'
   })
-    const annualPricingData = await $fetch('/api/pricing')
+  const { data: annualPricingData } = await useFetch('/api/pricing')
 </script>
 
 <template>

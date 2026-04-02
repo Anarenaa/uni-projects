@@ -1,216 +1,195 @@
 <script setup lang="ts">
 import { getPaginationRowModel } from '@tanstack/vue-table'
+import { h, resolveComponent } from 'vue'
 import type { TableColumn } from '@nuxt/ui'
 
 useHead({
   title: 'Table'
 })
 
-const table = useTemplateRef('table')
+const UButton = resolveComponent('UButton')
 
-type Payment = {
-  id: string
-  date: string
-  email: string
-  amount: number
+type Product = {
+  id: number
+  title: string
+  description: string
+  category: string
+  price: number
+  rating: number
+  brand: string
+  thumbnail: string
 }
-const data = ref<Payment[]>([
-  {
-    id: '4600',
-    date: '2024-03-11T15:30:00',
-    email: 'james.anderson@example.com',
-    amount: 594
-  },
-  {
-    id: '4599',
-    date: '2024-03-11T10:10:00',
-    email: 'mia.white@example.com',
-    amount: 276
-  },
-  {
-    id: '4598',
-    date: '2024-03-11T08:50:00',
-    email: 'william.brown@example.com',
-    amount: 315
-  },
-  {
-    id: '4597',
-    date: '2024-03-10T19:45:00',
-    email: 'emma.davis@example.com',
-    amount: 529
-  },
-  {
-    id: '4596',
-    date: '2024-03-10T15:55:00',
-    email: 'ethan.harris@example.com',
-    amount: 639
-  },
-  {
-    id: '4595',
-    date: '2024-03-10T13:20:00',
-    email: 'sophia.miller@example.com',
-    amount: 428
-  },
-  {
-    id: '4594',
-    date: '2024-03-10T11:05:00',
-    email: 'noah.wilson@example.com',
-    amount: 673
-  },
-  {
-    id: '4593',
-    date: '2024-03-09T22:15:00',
-    email: 'olivia.jones@example.com',
-    amount: 382
-  },
-  {
-    id: '4592',
-    date: '2024-03-09T20:30:00',
-    email: 'liam.taylor@example.com',
-    amount: 547
-  },
-  {
-    id: '4591',
-    date: '2024-03-09T18:45:00',
-    email: 'ava.thomas@example.com',
-    amount: 291
-  },
-  {
-    id: '4590',
-    date: '2024-03-09T16:20:00',
-    email: 'lucas.martin@example.com',
-    amount: 624
-  },
-  {
-    id: '4589',
-    date: '2024-03-09T14:10:00',
-    email: 'isabella.clark@example.com',
-    amount: 438
-  },
-  {
-    id: '4588',
-    date: '2024-03-09T12:05:00',
-    email: 'mason.rodriguez@example.com',
-    amount: 583
-  },
-  {
-    id: '4587',
-    date: '2024-03-09T10:30:00',
-    email: 'sophia.lee@example.com',
-    amount: 347
-  },
-  {
-    id: '4586',
-    date: '2024-03-09T08:15:00',
-    email: 'ethan.walker@example.com',
-    amount: 692
-  },
-  {
-    id: '4585',
-    date: '2024-03-08T23:40:00',
-    email: 'amelia.hall@example.com',
-    amount: 419
-  },
-  {
-    id: '4584',
-    date: '2024-03-08T21:25:00',
-    email: 'oliver.young@example.com',
-    amount: 563
-  },
-  {
-    id: '4583',
-    date: '2024-03-08T19:50:00',
-    email: 'aria.king@example.com',
-    amount: 328
-  },
-  {
-    id: '4582',
-    date: '2024-03-08T17:35:00',
-    email: 'henry.wright@example.com',
-    amount: 647
-  },
-  {
-    id: '4581',
-    date: '2024-03-08T15:20:00',
-    email: 'luna.lopez@example.com',
-    amount: 482
-  }
-])
-const columns: TableColumn<Payment>[] = [
-  {
-    accessorKey: 'id',
-    header: '#',
-    cell: ({ row }) => `#${row.getValue('id')}`
-  },
-  {
-    accessorKey: 'date',
-    header: 'Date',
-    cell: ({ row }) => {
-      return new Date(row.getValue('date')).toLocaleString('en-US', {
-        day: 'numeric',
-        month: 'short',
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: false
-      })
-    }
-  },
-  {
-    accessorKey: 'email',
-    header: 'Email'
-  },
-  {
-    accessorKey: 'amount',
-    header: 'Amount',
-    meta: {
-      class: {
-        th: 'text-right',
-        td: 'text-right font-medium'
-      }
-    },
-    cell: ({ row }) => {
-      const amount = Number.parseFloat(row.getValue('amount'))
-      return new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'EUR'
-      }).format(amount)
-    }
-  }
-]
+
+const { data, status } = useLazyFetch<{ products: Product[] }>('https://dummyjson.com/products', {
+  key: 'table-products',
+  server: false
+})
+
+const products = computed(() => data.value?.products || [])
 
 const pagination = ref({
   pageIndex: 0,
-  pageSize: 5
+  pageSize: 3
 })
 
+const table = useTemplateRef('table')
+
 const globalFilter = ref('')
+
+const selectedCount = computed(() => {
+  const tableApi = table.value?.tableApi
+  if (!tableApi) return 0
+  
+  return tableApi.getFilteredRowModel().rows.filter(row => row.getIsSelected()).length
+})
+
+const updatePageSize = (event: Event) => {
+  const target = event.target as HTMLInputElement
+  const newSize = parseInt(target.value)
+  if (!isNaN(newSize) && newSize > 0) {
+    pagination.value.pageSize = newSize
+    pagination.value.pageIndex = 0
+  }
+}
+
+const createSortableHeader = (label: string) => ({ column }) => {
+  const isSorted = column.getIsSorted()
+
+  return h(UButton, {
+    color: 'neutral',
+    variant: 'ghost',
+    label,
+    icon: isSorted
+      ? isSorted === 'asc'
+        ? 'i-lucide-arrow-up-narrow-wide'
+        : 'i-lucide-arrow-down-wide-narrow'
+      : 'i-lucide-arrow-up-down',
+    class: '-mx-2.5',
+    onClick: () => column.toggleSorting(column.getIsSorted() === 'asc')
+  })
+}
+
+const columns: TableColumn<Product>[] = [
+  {
+    id: 'select',
+    header: ({ table }) => h('input', { 
+      type: 'checkbox', 
+      class: 'w-4 h-4 cursor-pointer',
+      checked: table.getIsAllPageRowsSelected(),
+      indeterminate: table.getIsSomePageRowsSelected(),
+      onChange: () => table.toggleAllPageRowsSelected(!table.getIsAllPageRowsSelected())
+    }),
+    cell: ({ row }) => h('input', { 
+      type: 'checkbox', 
+      class: 'w-4 h-4 cursor-pointer',
+      checked: row.getIsSelected(),
+      onChange: () => row.toggleSelected(!row.getIsSelected())
+    })
+  },
+  {
+    accessorKey: 'title',
+    header: createSortableHeader('Title')
+  },
+  {
+    accessorKey: 'description',
+    header: createSortableHeader('Description'),
+    cell: ({ row }) => h('p', { class: 'max-w-xs truncate' }, row.getValue('description'))
+  },
+  {
+    accessorKey: 'price',
+    header: createSortableHeader('Price'),
+    cell: ({ row }) => `$${row.getValue('price')}`
+  },
+  {
+    accessorKey: 'rating',
+    header: createSortableHeader('Rating'),
+    cell: ({ row }) => h('span', 
+      { class: Number(row.getValue('rating')) < 4.5 
+        ? 'text-red-500' 
+        : 'text-green-500' 
+      }, 
+      row.getValue('rating')
+    )
+  },
+  {
+    accessorKey: 'brand',
+    header: createSortableHeader('Brand')
+  },
+  {
+    accessorKey: 'category',
+    header: createSortableHeader('Category')
+  },
+  {
+    accessorKey: 'thumbnail',
+    header: 'Image',
+    cell: ({ row }) => h('img', { src: row.getValue('thumbnail'), alt: row.getValue('title'), class: 'w-25 h-25 object-cover' })
+  },
+  {
+    id: 'actions',
+    header: '',
+    cell: ({ row }) => h('button', {
+      class: 'px-2 py-2 text-right cursor-pointer pr-4',
+    }, '⋮')
+  }
+]
 </script>
 
 <template>
-  <div class="w-full space-y-4 pb-4">
-    <div class="flex px-4 py-3.5 border-b border-accented">
+  <div class="p-4">
+    <div class="flex gap-4 my-4">
+      <p class="text-gray-400 mr-auto">
+        <span>{{ selectedCount }}</span> selected
+      </p>
       <UInput v-model="globalFilter" class="max-w-sm" placeholder="Filter..." />
     </div>
-
-    <UTable
-      ref="table"
-      v-model:pagination="pagination"
-      v-model:global-filter="globalFilter"
-      :data="data"
-      :columns="columns"
-      :pagination-options="{
-        getPaginationRowModel: getPaginationRowModel()
-      }"
-      class="flex-1"
-    />
-
-    <div class="flex justify-end border-t border-default pt-4 px-4">
-      <UPagination
-        :page="(table?.tableApi?.getState().pagination.pageIndex || 0) + 1"
-        :items-per-page="table?.tableApi?.getState().pagination.pageSize"
-        :total="table?.tableApi?.getFilteredRowModel().rows.length"
-        @update:page="(p) => table?.tableApi?.setPageIndex(p - 1)"
-      />
+    
+    <div class="border border-gray-100 rounded-lg">
+      <div class="overflow-x-auto">
+        <UTable
+          ref="table"
+          v-model:pagination="pagination"
+          v-model:global-filter="globalFilter"
+          :data="products"
+          :columns="columns"
+          :loading="status === 'pending' || status === 'idle'"
+          :ui="{
+            th: {
+              base: 'px-3 py-2 font-normal text-gray-500',
+              padding: 'px-4 py-2'
+            },
+            td: {
+              base: 'border-b border-gray-100',
+              padding: 'px-4 py-2'
+            },
+            tr: {
+              base: 'hover:bg-gray-50'
+            },
+            thead: 'bg-gray-100 font-normal'
+          }"
+          class="w-full text-sm md:text-base"
+          :pagination-options="{
+            getPaginationRowModel: getPaginationRowModel()
+          }"
+        />
+      </div>
+      
+      <div class="flex justify-between items-center text-gray-400 p-4 text-sm border-t border-gray-100">
+        <div>
+          Show
+          <input 
+            :value="pagination.pageSize" 
+            @input="updatePageSize"
+            class="w-7 mx-1 py-1 text-center text-black border border-black rounded-xs" 
+            type="text"
+          > of {{ products.length }} results
+        </div>
+        <UPagination
+            :page="(table?.tableApi?.getState().pagination.pageIndex || 0) + 1"
+            :items-per-page="table?.tableApi?.getState().pagination.pageSize"
+            :total="table?.tableApi?.getFilteredRowModel().rows.length"
+            @update:page="(p) => table?.tableApi?.setPageIndex(p - 1)"
+          />
+      </div>
     </div>
   </div>
 </template>
