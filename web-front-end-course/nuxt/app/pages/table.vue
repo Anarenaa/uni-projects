@@ -2,6 +2,10 @@
 import { getPaginationRowModel } from '@tanstack/vue-table'
 import type { TableColumn } from '@nuxt/ui'
 
+useHead({
+  title: 'Table'
+})
+
 const table = useTemplateRef('table')
 
 type Payment = {

@@ -1,4 +1,7 @@
 <script setup lang="ts">
+  useHead({
+    title: 'Products'
+  })
     const annualPricingData = await $fetch('/api/pricing')
 </script>
 
