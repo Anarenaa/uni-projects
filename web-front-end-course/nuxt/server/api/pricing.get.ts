@@ -1,9 +1,8 @@
 export default defineEventHandler(async (event) => {
 
-  const annualPricingData = {
-    plans: [
+  const annualPricingData = [
       {
-        id: 'starter-annual',
+        id: 1,
         name: 'Starter',
         daysFree: 3,
         monthlyPrice: 83.25,
@@ -20,7 +19,7 @@ export default defineEventHandler(async (event) => {
         supportPrice: 0
       },
       {
-        id: 'team-annual',
+        id: 2,
         name: 'Team',
         daysFree: 3,
         monthlyPrice: 207.50,
@@ -37,7 +36,7 @@ export default defineEventHandler(async (event) => {
         supportPrice: 0
       },
       {
-        id: 'business-annual',
+        id: 3,
         name: 'Business',
         daysFree: 3,
         monthlyPrice: 457.50,
@@ -54,7 +53,5 @@ export default defineEventHandler(async (event) => {
         supportPrice: 0
       }
     ]
-  }
-
   return annualPricingData
 })

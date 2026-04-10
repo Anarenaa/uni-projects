@@ -1,14 +1,17 @@
 <script setup lang="ts">
-  useHead({
-    title: 'Products'
-  })
-  const { data: annualPricingData } = await useFetch('/api/pricing')
+useHead({
+  title: "Products",
+});
+const { data: annualPricingData } = await useFetch("/api/pricing");
 </script>
 
 <template>
-  <div class="flex justify-around" v-if="annualPricingData">
-    <Card :plan="annualPricingData.plans[0]" />
-    <Card :plan="annualPricingData.plans[1]" />
-    <Card :plan="annualPricingData.plans[2]" />
+  <div class="flex justify-around gap-6 p-8" v-if="annualPricingData">
+    <Product
+      v-for="product in annualPricingData"
+      :key="product.id"
+      :product
+      :isButtonHidden="false"
+    />
   </div>
 </template>
