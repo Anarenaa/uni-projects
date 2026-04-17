@@ -7,6 +7,12 @@ interface Props {
 const props = defineProps<Props>();
 const product = props.product;
 const isButtonHidden = props.isButtonHidden ?? false;
+
+const subscriptionStore = useSubscriptionStore();
+
+const selectSubscription = () => {
+  subscriptionStore.setSelectedSubscription(product);
+};
 </script>
 
 <template>
@@ -27,8 +33,12 @@ const isButtonHidden = props.isButtonHidden ?? false;
     </p>
     <p class="text-gray-600 text-sm mb-2">
       billed yearly at
-      <span class="line-through"> ${{ formatCurrency(product.originalPrice) }} </span>
-      <span class="text-black font-medium"> ${{ formatCurrency(product.yearlyBilled) }}</span>
+      <span class="line-through">
+        ${{ formatCurrency(product.originalPrice) }}
+      </span>
+      <span class="text-black font-medium">
+        ${{ formatCurrency(product.yearlyBilled) }}</span
+      >
     </p>
     <span
       class="text-green-600 font-medium text-sm bg-gray-100 px-2 py-1 rounded-md"
@@ -39,6 +49,7 @@ const isButtonHidden = props.isButtonHidden ?? false;
     <NuxtLink
       :to="{ path: '/checkout', query: { productId: product.id } }"
       v-if="!isButtonHidden"
+      @click="selectSubscription"
       class="block w-full text-center bg-linear-to-r from-yellow-400 to-orange-500 rounded-lg py-3 my-4 cursor-pointer font-medium text-base text-black capitalize active:outline"
     >
       Try it free

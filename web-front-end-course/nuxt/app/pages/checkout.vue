@@ -18,12 +18,17 @@ const form = ref({
 const loading = ref(false);
 const error = ref("");
 
+const subscriptionStore = useSubscriptionStore();
 const route = useRoute();
 const productId = computed(() => Number(route.query.productId));
 
 const { data: pricing } = await useFetch<Product[]>("/api/pricing");
 
 const product = computed(() => {
+  if (subscriptionStore.selectedSubscription) {
+    return subscriptionStore.selectedSubscription;
+  }
+  
   return pricing.value?.find((p) => p.id === productId.value);
 });
 
