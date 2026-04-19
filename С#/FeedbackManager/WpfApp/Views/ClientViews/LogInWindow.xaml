@@ -1,0 +1,40 @@
+﻿<Window x:Class="WpfApp.Views.ClientViews.LogInWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp.Views.ClientViews"
+        mc:Ignorable="d"
+        Title="LogInWindow" Height="400" Width="350" WindowStartupLocation="CenterOwner">
+    <Grid Margin="50,20" VerticalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Логін*" FontWeight="Bold"/>
+        <TextBox x:Name="LoginTextBox" Grid.Row="1" 
+                 Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                 Text="{Binding Login}"
+                 VerticalContentAlignment="Top"
+                 Padding="10,8"/>
+
+        <Label Content="Пароль*" FontWeight="Bold"
+           Grid.Row="2" Margin="0,8,0,0"/>
+        <TextBox x:Name="PasswordTextBox" Grid.Row="3" 
+                 Text="{Binding Password}"
+                 Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                 VerticalContentAlignment="Top"
+                 Padding="10,8"/>
+
+        <Button x:Name="LoginButton" Grid.Row="5"
+                Command="{Binding LoginUserCommand}"
+                CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
+                Content="Увійти"
+                Height="40"
+                Margin="0,24,0,0"/>
+    </Grid>
+</Window>

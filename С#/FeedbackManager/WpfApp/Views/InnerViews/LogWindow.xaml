@@ -1,0 +1,22 @@
+﻿<Window x:Class="WpfApp.Views.InnerViews.LogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp.Views.InnerViews"
+        mc:Ignorable="d"
+        Title="LogWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <DataGrid Background="White" AutoGenerateColumns="False" IsReadOnly="True"
+                  CanUserAddRows="False" CanUserDeleteRows="False"
+                  ItemsSource="{Binding Logs}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Користувач" Binding="{Binding UserString}" Width="*"/>
+                <DataGridTextColumn Header="Дія" Binding="{Binding Action}" Width="*"/>
+                <DataGridTextColumn Header="Об'єкт" Binding="{Binding EntityType}" Width="*"/>
+                <DataGridTextColumn Header="ID Об'єкта" Binding="{Binding EntityId}" Width="*"/>
+                <DataGridTextColumn Header="Дата і час" Binding="{Binding Timestamp, StringFormat={}{0:dd.MM.yyyy HH:mm}}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
