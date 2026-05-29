@@ -15,7 +15,7 @@ Route::group([ 'namespace' => 'App\Http\Controllers\Api\Blog', 'prefix' => 'blog
 
 //Адмінка
 $groupData = [
-    'namespace' => 'App\Http\Controllers\Api\Blog\Admin',
+    //'namespace' => 'App\Http\Controllers\Api\Blog\Admin',
     'prefix' => 'admin/blog',
 ];
 Route::group($groupData, function () {
@@ -24,4 +24,9 @@ Route::group($groupData, function () {
     Route::apiResource('categories', CategoryController::class)
     ->only($methods)
     ->names('blog.admin.categories'); 
+
+    //BlogPost
+    Route::apiResource('posts', PostController::class)
+    ->except(['show'])                               //не робити маршрут для метода show
+    ->names('blog.admin.posts');
  });
