@@ -40,11 +40,6 @@ class CategoryController extends BaseController
 
         $data = $request->input();;
 
-        // Генерація slug, якщо користувач його не заповнив
-        if (empty($data['slug'])) {
-            $data['slug'] = Str::slug($data['title']);
-        }
-
         // Створюємо об'єкт у базі даних
         $item = BlogCategory::create($data);
 
@@ -77,11 +72,8 @@ class CategoryController extends BaseController
     {
         //dd(__METHOD__);
 
-         $item = BlogCategory::find($id);
-        if (empty($item)) { //якщо ід не знайдено
-            return ['message' => "Запис id=[{$id}] не знайдено"];
-        }
-
+        $item = BlogCategory::find($id);
+        
         $data = $request->all(); //отримаємо масив даних, які надійшли з форми
         if (empty($data['slug'])) { //якщо псевдонім порожній
             $data['slug'] = Str::slug($data['title']); //генеруємо псевдонім

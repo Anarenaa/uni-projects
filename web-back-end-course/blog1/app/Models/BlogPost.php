@@ -1,10 +1,14 @@
 <?php
 
 namespace App\Models;
+
+use App\Observers\BlogPostObserver;
+use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+#[ObservedBy([BlogPostObserver::class])]
 class BlogPost extends Model
 {
     use HasFactory;
