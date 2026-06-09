@@ -7,6 +7,8 @@ use App\Repositories\BlogCategoryRepository;
 use App\Http\Requests\BlogPostUpdateRequest;
 use App\Models\BlogPost;
 use App\Http\Requests\BlogPostCreateRequest;
+use App\Jobs\BlogPostAfterCreateJob;
+use App\Jobs\BlogPostAfterDeleteJob;
 
 class PostController extends BaseController
 {
@@ -29,7 +31,12 @@ class PostController extends BaseController
         $item = (new BlogPost())->create($data); //створюємо об'єкт і додаємо в БД
 
         if ($item) {
-            return ['success' => 'Успішно збережено'];
+            BlogPostAfterCreateJob::dispatch($item);
+            return [
+                'success' => true,
+                'message' => 'Успішно збережено',
+                "item" => $item
+            ];
         } else {
             return ['msg' => 'Помилка збереження'];
         }
@@ -61,11 +68,21 @@ class PostController extends BaseController
 
         //$result = BlogPost::find($id)->forceDelete(); //повне видалення з БД
 
+        // Або
+        // 1. Спочатку знаходимо пост у базі
+        // $item = BlogPost::find($id);
+        // Якщо такого поста немає — одразу кажемо про це
+        // if (empty($item)) {
+        //     return ['message' => "Запис id=[{$id}] не знайдено"];
+        // }
+        // 2. Викликаємо видалення на самому об'єкті (Soft Delete)
+        // $result = $item->delete();
+
         if ($result) {
+            BlogPostAfterDeleteJob::dispatch($id)->delay(20);
             return [
                 'success' => true,
-                'message' => "Успішне м'яке видалення",
-                'item' => $result
+                'message' => "Успішне м'яке видалення"
             ];
         } else {
             return ['message' => 'Помилка збереження'];
