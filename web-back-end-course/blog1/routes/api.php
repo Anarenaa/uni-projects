@@ -1,9 +1,11 @@
 <?php
 
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\Blog\PostController;
 use App\Http\Controllers\Api\Blog\Admin\CategoryController;
+use App\Http\Controllers\DiggingDeeperController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -30,3 +32,9 @@ Route::group($groupData, function () {
     ->except(['show'])                               //не робити маршрут для метода show
     ->names('blog.admin.posts');
  });
+
+Route::get('process-video', 'App\Http\Controllers\DiggingDeeperController@processVideo')
+->name('digging_deeper.processVideo');
+
+Route::get('prepare-catalog', 'App\Http\Controllers\DiggingDeeperController@prepareCatalog')
+->name('digging_deeper.prepareCatalog'); 
