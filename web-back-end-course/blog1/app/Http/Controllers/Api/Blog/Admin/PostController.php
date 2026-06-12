@@ -9,6 +9,7 @@ use App\Models\BlogPost;
 use App\Http\Requests\BlogPostCreateRequest;
 use App\Jobs\BlogPostAfterCreateJob;
 use App\Jobs\BlogPostAfterDeleteJob;
+use Illuminate\Http\Request;
 
 class PostController extends BaseController
 {
@@ -17,9 +18,12 @@ class PostController extends BaseController
         //parent::__construct();
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $paginator = $this->blogPostRepository->getAllWithPaginate();
+        $perPage = $request->query('per_page', 25);
+        $search = $request->query('search');
+
+        $paginator = $this->blogPostRepository->getAllWithPaginate($perPage, $search);
 
         return $paginator;
     }
