@@ -59,12 +59,12 @@ const deletePost = async (id: number) => {
   }
 };
 
-const columns: TableColumn<any>[] = [
+const columns: TableColumn<Post>[] = [
   { accessorKey: "id", header: "#" },
-  { accessorKey: "user", header: "Автор" },
-  { accessorKey: "category", header: "Категорія" },
+  { accessorKey: "author_name", header: "Автор" },
+  { accessorKey: "category_title", header: "Категорія" },
   { accessorKey: "title", header: "Заголовок" },
-  { accessorKey: "published_at", header: "Дата публікації" },
+  { accessorKey: "date_published", header: "Дата публікації" },
   { id: "actions", header: "" },
 ];
 
@@ -110,13 +110,13 @@ function getDropdownActions(post: Post): DropdownMenuItem[][] {
       >
         <template #user-cell="{ row }">
           <span class="font-medium text-gray-700">
-            {{ row.original.user?.name || "Невідомий автор" }}
+            {{ row.original.author_name || "Невідомий автор" }}
           </span>
         </template>
 
         <template #category-cell="{ row }">
           <span class="text-gray-600">
-            {{ row.original.category?.title || "Без категорії" }}
+            {{ row.original.category_title || "Без категорії" }}
           </span>
         </template>
 
@@ -129,21 +129,10 @@ function getDropdownActions(post: Post): DropdownMenuItem[][] {
           </NuxtLink>
         </template>
 
-        <template #published_at-cell="{ row }">
+        <template #date_published_at-cell="{ row }">
           <span class="text-sm text-gray-500">
             {{
-              row.original.published_at
-                ? new Date(row.original.published_at).toLocaleString(
-                    undefined,
-                    {
-                      day: "2-digit",
-                      month: "2-digit",
-                      year: "numeric",
-                      hour: "2-digit",
-                      minute: "2-digit",
-                    },
-                  )
-                : "Чернетка"
+              row.original.date_published
             }}
           </span>
         </template>

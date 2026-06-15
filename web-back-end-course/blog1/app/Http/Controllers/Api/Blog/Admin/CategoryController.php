@@ -8,8 +8,8 @@ use App\Http\Requests\BlogCategoryCreateRequest;
 use App\Models\BlogCategory;
 use App\Repositories\BlogCategoryRepository;
 use Illuminate\Support\Str;
-use Illuminate\Http\Request;
 use App\Http\Requests\BlogCategoryUpdateRequest;
+use App\Http\Resources\Api\Blog\Admin\CategoryResource;
 
 class CategoryController extends BaseController
 {
@@ -28,7 +28,7 @@ class CategoryController extends BaseController
         //$paginator = BlogCategory::paginate(5);
         $paginator = $this->blogCategoryRepository->getAllWithPaginate(5);
         
-        return $paginator;
+        return CategoryResource::collection($paginator);
     }
     public function listAll() {
         $categories = $this->blogCategoryRepository->getForComboBox();

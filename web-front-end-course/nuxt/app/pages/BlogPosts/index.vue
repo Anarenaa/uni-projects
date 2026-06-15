@@ -6,10 +6,21 @@ useHead({
 });
 
 type LaravelPaginationResponse = {
-  current_page: number;
   data: Post[];
-  total: number;
-  per_page: number;
+  links: {
+    first: string;
+    last: string;
+    prev: string | null;
+    next: string | null;
+  };
+  meta: {
+    current_page: number;
+    from: number;
+    last_page: number;
+    per_page: number;
+    to: number;
+    total: number;
+  };
 };
 
 const page = ref(1);
@@ -40,7 +51,7 @@ const { data, status, refresh } = useFetch<LaravelPaginationResponse>(
 );
 
 const posts = computed(() => data.value?.data || []);
-const totalResults = computed(() => data.value?.total || 0);
+const totalResults = computed(() => data.value?.meta?.total || 0);
 </script>
 
 <template>
