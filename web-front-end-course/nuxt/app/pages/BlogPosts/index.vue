@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type Post from "../types/post";
+import type Post from "../../types/post";
 
 useHead({
   title: "Управління статтями",
@@ -26,7 +26,7 @@ watchDebounced(
   { debounce: 500, maxWait: 1000 },
 );
 
-const { data, status } = useFetch<LaravelPaginationResponse>(
+const { data, status, refresh } = useFetch<LaravelPaginationResponse>(
   "/api/blog/admin/posts",
   {
     key: "server-table-posts",
@@ -54,18 +54,19 @@ const totalResults = computed(() => data.value?.total || 0);
     </div>
 
     <a
-      href="/blog/admin/posts/create"
+      href="/BlogPosts/create"
       class="block font-bold text-xl text-center bg-gray-100 py-4 my-1 border border-gray-300 hover:bg-gray-50 rounded-2xl"
     >
       Додати
     </a>
 
-    <PostsTableComponent
+    <PostPostsTableComponent
       v-model:page="page"
       v-model:perPage="perPage"
       :posts="posts"
       :loading="status === 'pending'"
       :totalResults="totalResults"
+      @post-deleted="refresh"
     />
   </div>
 </template>

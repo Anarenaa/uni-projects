@@ -27,6 +27,16 @@ class PostController extends BaseController
 
         return $paginator;
     }
+    public function show(string $id)
+    {
+        return BlogPost::with('category')->findOrFail($id);
+        
+        // $item = $this->blogPostRepository->getEdit($id);
+        // if (empty($item)) {
+        //     return ['message' => "Запис id=[{$id}] не знайдено"];
+        // }
+        //return $item;
+    }
 
     public function store(BlogPostCreateRequest $request)
     {
@@ -73,13 +83,10 @@ class PostController extends BaseController
         //$result = BlogPost::find($id)->forceDelete(); //повне видалення з БД
 
         // Або
-        // 1. Спочатку знаходимо пост у базі
         // $item = BlogPost::find($id);
-        // Якщо такого поста немає — одразу кажемо про це
         // if (empty($item)) {
         //     return ['message' => "Запис id=[{$id}] не знайдено"];
         // }
-        // 2. Викликаємо видалення на самому об'єкті (Soft Delete)
         // $result = $item->delete();
 
         if ($result) {

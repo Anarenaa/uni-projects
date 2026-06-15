@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { TableColumn, DropdownMenuItem } from "@nuxt/ui";
-import type Post from "../types/post";
+import type Post from "../../types/post";
 
 const props = defineProps<{
   posts: Post[];
@@ -11,25 +11,55 @@ const props = defineProps<{
 }>();
 
 const emit = defineEmits<{
-  (e: 'update:page', value: number): void;
-  (e: 'update:perPage', value: number): void;
+  (e: "update:page", value: number): void;
+  (e: "update:perPage", value: number): void;
+  (e: "post-deleted"): void;
 }>();
 
 const currentPage = computed({
   get: () => props.page,
-  set: (value) => emit('update:page', value)
+  set: (value) => emit("update:page", value),
 });
 
 const updatePageSize = (event: Event) => {
   const target = event.target as HTMLInputElement;
   const newSize = parseInt(target.value);
   if (!isNaN(newSize) && newSize > 0) {
-    emit('update:perPage', newSize);
-    emit('update:page', 1);
+    emit("update:perPage", newSize);
+    emit("update:page", 1);
   }
 };
 
-const columns: TableColumn<Post>[] = [
+const toast = useToast();
+const deletePost = async (id: number) => {
+  if (!confirm("Видалити цей пост?")) return;
+  
+  try {
+    const response = await $fetch<any>(`/api/blog/admin/posts/${id}`, { 
+      method: "DELETE" 
+    });
+    
+    if (response.success) {
+      toast.add({
+        title: `Запис (ID: ${id}) видалено`,
+        color: "success",
+        icon: "i-lucide-check-circle",
+      });
+      
+      emit("post-deleted");
+    }
+  } catch (error) {
+    console.error("Не вдалося видалити пост:", error);
+    toast.add({
+      title: "Критична помилка",
+      description: "Сервер відхилив запит на видалення.",
+      color: "error",
+      icon: "i-lucide-x-circle",
+    });
+  }
+};
+
+const columns: TableColumn<any>[] = [
   { accessorKey: "id", header: "#" },
   { accessorKey: "user", header: "Автор" },
   { accessorKey: "category", header: "Категорія" },
@@ -45,7 +75,7 @@ function getDropdownActions(post: Post): DropdownMenuItem[][] {
         label: "Редагувати",
         icon: "i-lucide-edit",
         onSelect: () => {
-          navigateTo(`/blog/admin/posts/${post.id}/edit`);
+          navigateTo(`/BlogPosts/${post.id}/edit`);
         },
       },
     ],
@@ -55,7 +85,7 @@ function getDropdownActions(post: Post): DropdownMenuItem[][] {
         icon: "i-lucide-trash",
         color: "error",
         onSelect: () => {
-          console.log("Видаляємо пост:", post.id);
+          deletePost(post.id)
         },
       },
     ],
@@ -92,7 +122,7 @@ function getDropdownActions(post: Post): DropdownMenuItem[][] {
 
         <template #title-cell="{ row }">
           <NuxtLink
-            :to="`/blog/admin/posts/${row.original.id}`"
+            :to="`/BlogPosts/${row.original.id}`"
             class="text-blue-600 hover:underline font-medium"
           >
             {{ row.original.title }}
@@ -134,7 +164,9 @@ function getDropdownActions(post: Post): DropdownMenuItem[][] {
       </UTable>
     </div>
 
-    <div class="flex justify-between items-center text-gray-400 p-4 text-sm border-t border-gray-100">
+    <div
+      class="flex justify-between items-center text-gray-400 p-4 text-sm border-t border-gray-100"
+    >
       <div>
         Показувати по
         <input

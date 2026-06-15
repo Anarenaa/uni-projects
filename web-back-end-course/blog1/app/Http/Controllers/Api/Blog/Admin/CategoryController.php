@@ -30,7 +30,10 @@ class CategoryController extends BaseController
         
         return $paginator;
     }
-
+    public function listAll() {
+        $categories = $this->blogCategoryRepository->getForComboBox();
+        return $categories;
+    }
     /**
      * Store a newly created resource in storage.
      */

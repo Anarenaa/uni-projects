@@ -23,13 +23,13 @@ $groupData = [
 Route::group($groupData, function () {
     //BlogCategory
     $methods = ['index','store','update',];
+    Route::get('categories/list-all','CategoryController@listAll');
     Route::apiResource('categories', "CategoryController")
     ->only($methods)
     ->names('blog.admin.categories'); 
 
     //BlogPost
     Route::apiResource('posts', 'PostController')
-    ->except(['show'])                               //не робити маршрут для метода show
     ->names('blog.admin.posts');
  });
 

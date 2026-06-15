@@ -59,6 +59,7 @@ useSeoMeta({
 
     <UMain>
       <NuxtPage />
+      <UToaster />
     </UMain>
 
     <USeparator icon="i-simple-icons-nuxtdotjs" />
