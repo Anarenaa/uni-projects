@@ -25,7 +25,6 @@ Route::group($groupData, function () {
     $methods = ['index','store','update',];
     Route::get('categories/list-all','CategoryController@listAll');
     Route::apiResource('categories', "CategoryController")
-    ->only($methods)
     ->names('blog.admin.categories'); 
 
     //BlogPost

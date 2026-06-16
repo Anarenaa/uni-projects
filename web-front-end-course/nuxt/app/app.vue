@@ -41,6 +41,9 @@ useSeoMeta({
         <NuxtLink to="/BlogPosts">
           Posts
         </NuxtLink>
+        <NuxtLink to="/BlogCategories">
+          Categories
+        </NuxtLink>
       </template>
 
       <template #right>

@@ -14,6 +14,16 @@ const { data: post } = await useFetch<any>(`/api/blog/admin/posts/${id}`);
         <UButton icon="i-lucide-arrow-left" variant="ghost" color="neutral" @click="navigateTo('/BlogPosts')" />
         <h1 class="text-2xl font-bold text-gray-900">Перегляд статті #{{ id }}</h1>
       </div>
+      <div>
+        <UButton 
+          icon="i-lucide-edit" 
+          color="primary" 
+          variant="subtle" 
+          @click="navigateTo(`/BlogPosts/${id}/edit`)"
+        >
+          Редагувати
+        </UButton>
+      </div>
     </div>
 
     <div v-if="post" class="bg-white p-8 border border-gray-100 rounded-2xl shadow-sm space-y-6">

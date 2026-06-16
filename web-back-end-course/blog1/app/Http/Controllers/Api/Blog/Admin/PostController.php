@@ -94,7 +94,7 @@ class PostController extends BaseController
             BlogPostAfterDeleteJob::dispatch($id)->delay(20);
             return [
                 'success' => true,
-                'message' => "Успішне м'яке видалення"
+                'message' => "Успішне видалення"
             ];
         } else {
             return ['message' => 'Помилка збереження'];

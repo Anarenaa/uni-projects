@@ -8,6 +8,7 @@ use App\Http\Requests\BlogCategoryCreateRequest;
 use App\Models\BlogCategory;
 use App\Repositories\BlogCategoryRepository;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 use App\Http\Requests\BlogCategoryUpdateRequest;
 use App\Http\Resources\Api\Blog\Admin\CategoryResource;
 
@@ -21,12 +22,13 @@ class CategoryController extends BaseController
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         //dd(__METHOD__);
 
-        //$paginator = BlogCategory::paginate(5);
-        $paginator = $this->blogCategoryRepository->getAllWithPaginate(5);
+        $perPage = $request->query('per_page', 5);
+        $search = $request->query('search');
+        $paginator = $this->blogCategoryRepository->getAllWithPaginate($perPage, $search);
         
         return CategoryResource::collection($paginator);
     }
@@ -65,7 +67,9 @@ class CategoryController extends BaseController
      */
     public function show(string $id)
     {
-        //dd(__METHOD__);
+        $category = BlogCategory::with('parentCategory')->findOrFail($id);
+    
+        return new CategoryResource($category);
     }
 
     /**
@@ -101,5 +105,14 @@ class CategoryController extends BaseController
     public function destroy(string $id)
     {
         //dd(__METHOD__);
+        $result = BlogCategory::destroy($id); //софт деліт, запис лишається
+        if ($result) {
+            return [
+                'success' => true,
+                'message' => "Успішне видалення"
+            ];
+        } else {
+            return ['message' => 'Помилка збереження'];
+        }
     }
 }

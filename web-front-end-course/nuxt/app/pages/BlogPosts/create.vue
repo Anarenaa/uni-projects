@@ -1,35 +1,37 @@
 <script setup lang="ts">
-const isSaving = ref(false);
+import { postSchema, type PostSchemaType } from '~/types/post.schema'
+import type { FormSubmitEvent } from '@nuxt/ui'
 
-const form = ref<any>({
+const isSaving = ref(false);
+const schema = postSchema;
+
+const state = reactive<PostSchemaType>({
   title: "",
   slug: "",
-  category_id: null,
-  excerpt: "",
+  category_id: "1",
   content_raw: "",
-  is_published: false,
-  published_at: "", 
 });
 
 const toast = useToast();
-const createPost = async () => {
+
+async function onSubmit(event: FormSubmitEvent<PostSchemaType>) {
   isSaving.value = true;
   try {
     const newPost = await $fetch<any>('/api/blog/admin/posts', {
       method: "POST",
-      body: form.value,
+      body: event.data,
     });
 
     toast.add({
       title: "Статтю створено!",
-      description: `Новий запис "${newPost.item.title || 'Без назви'}" успішно додано в базу даних.`,
+      description: `Новий запис "${newPost.item?.title || 'Без назви'}" успішно додано.`,
       color: "success",
       icon: "i-lucide-check-circle"
     });
 
     await navigateTo(`/BlogPosts/${newPost.item.id}`);
   } catch (error) {
-    
+    console.error(error);
     toast.add({
       title: "Помилка створення",
       description: "Не вдалося зберегти нову статтю. Перевірте введені дані.",
@@ -39,7 +41,7 @@ const createPost = async () => {
   } finally {
     isSaving.value = false;
   }
-};
+}
 </script>
 
 <template>
@@ -49,8 +51,8 @@ const createPost = async () => {
       <h1 class="text-2xl font-bold text-gray-900">Створення статті</h1>
     </div>
 
-    <form @submit.prevent="createPost">
-      <PostForm v-model="form" :is-saving="isSaving" />
-    </form>
+    <UForm :schema="schema" :state="state" @submit="onSubmit">
+      <PostForm v-model="state" :is-saving="isSaving" />
+    </UForm>
   </div>
 </template>

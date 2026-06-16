@@ -62,16 +62,19 @@ class BlogCategoryRepository extends CoreRepository
      * 
      * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
      */
-    public function getAllWithPaginate($perPage = null)
+    public function getAllWithPaginate($perPage = 5, $search = null)
     {
-        $columns = ['id', 'title', 'parent_id'];
+        $columns = ['id', 'title', 'slug', 'parent_id', 'description'];
 
         $result = $this
             ->startConditions()
             ->select($columns)
-            ->with(['parentCategory:id,title',])
-            ->paginate($perPage); //можна $columns додати сюди
+            ->with(['parentCategory:id,title',]);
 
-        return $result;
+        if (!empty($search)) {
+            $result->where('title', 'LIKE', "%{$search}%");
+        }
+
+        return $result->paginate($perPage);
     }
 }
