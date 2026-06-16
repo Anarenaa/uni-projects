@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import * as z from 'zod'
+
 import type { FormSubmitEvent } from '@nuxt/ui'
 import { categorySchema, type CategorySchemaType } from '~/types/category.schema'
 
@@ -32,10 +32,8 @@ const category = categoryData.value?.data;
 if (category) {
   state.title = category.title || ''
   state.slug = category.slug || ''
-  state.description = category.description || ''
-  if (category.category_parent_id) {
-    state.parent_id = String(category.category_parent_id)
-  }
+  state.description = category.description || '' 
+  state.parent_id = String(category.category_parent_id)
 }
 
 async function onSubmit(event: FormSubmitEvent<CategorySchemaType>) {
@@ -47,7 +45,7 @@ async function onSubmit(event: FormSubmitEvent<CategorySchemaType>) {
       parent_id: Number(event.data.parent_id) 
     }
 
-    const response = await $fetch<any>(`/api/blog/admin/categories/${id}`, {
+    const response = await $fetch<any>(`http://localhost:80/api/blog/admin/categories/${id}`, {
       method: "PUT",
       headers: {
         "Accept": "application/json",
@@ -64,14 +62,27 @@ async function onSubmit(event: FormSubmitEvent<CategorySchemaType>) {
     })
 
     await navigateTo(`/BlogCategories/${id}`)
-  } catch (error) {
+  } catch (error: any) {
     console.error(error)
-    toast.add({
-      title: "Помилка оновлення",
-      description: "Перевірте правильність заповнення полів.",
-      color: "error",
-      icon: "i-lucide-x-circle"
-    })
+
+    if (error.statusCode === 422 && error.data) {
+      
+      const errorMessage = error.data.errors?.slug?.[0] || error.data.message
+
+      toast.add({
+        title: "Помилка валідації",
+        description: errorMessage,
+        color: "error",
+        icon: "i-lucide-x-circle"
+      })
+    } else {
+      toast.add({
+        title: "Помилка оновлення",
+        description: "Не вдалося зберегти зміни на сервері.",
+        color: "error",
+        icon: "i-lucide-x-circle"
+      })
+    }
   } finally {
     isSaving.value = false
   }

@@ -21,14 +21,11 @@ class PostResource extends JsonResource
             'slug'           => $this->slug,
             'is_published'   => (bool) $this->is_published,
             
-            // Форматуємо дату для зручності фронтенду
             'date_published' => $this->published_at ? $this->published_at->format('Y-m-d H:i:s') : "Чернетка",
             
-            // Передаємо id зв'язаних сутностей
             'user_id'        => $this->user_id,
             'category_id'    => $this->category_id,
             
-            // Приклад виведення зв'язку (якщо у моделі BlogPost налаштовано зв'язки category та user)
             'category_title' => $this->category?->title, 
             'author_name'    => $this->user?->name,
         ];

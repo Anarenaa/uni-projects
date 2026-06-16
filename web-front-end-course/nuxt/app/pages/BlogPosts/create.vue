@@ -17,7 +17,7 @@ const toast = useToast();
 async function onSubmit(event: FormSubmitEvent<PostSchemaType>) {
   isSaving.value = true;
   try {
-    const newPost = await $fetch<any>('/api/blog/admin/posts', {
+    const newPost = await $fetch<any>('http://localhost:80/api/blog/admin/posts', {
       method: "POST",
       body: event.data,
     });
@@ -30,14 +30,27 @@ async function onSubmit(event: FormSubmitEvent<PostSchemaType>) {
     });
 
     await navigateTo(`/BlogPosts/${newPost.item.id}`);
-  } catch (error) {
-    console.error(error);
-    toast.add({
-      title: "Помилка створення",
-      description: "Не вдалося зберегти нову статтю. Перевірте введені дані.",
-      color: "error",
-      icon: "i-lucide-x-circle"
-    });
+  } catch (error: any) {
+    console.error(error)
+
+    if (error.statusCode === 422 && error.data) {
+      
+      const errorMessage = error.data.errors?.slug?.[0] || error.data.message
+
+      toast.add({
+        title: "Помилка валідації",
+        description: errorMessage,
+        color: "error",
+        icon: "i-lucide-x-circle"
+      })
+    } else {
+      toast.add({
+        title: "Помилка оновлення",
+        description: "Не вдалося зберегти зміни на сервері.",
+        color: "error",
+        icon: "i-lucide-x-circle"
+      })
+    }
   } finally {
     isSaving.value = false;
   }

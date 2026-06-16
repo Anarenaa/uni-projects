@@ -18,7 +18,7 @@ if (postData.value) {
 const updatePost = async () => {
   isSaving.value = true;
   try {
-    const updatedPost = await $fetch<any>(`/api/blog/admin/posts/${id}`, {
+    const updatedPost = await $fetch<any>(`http://localhost:80/api/blog/admin/posts/${id}`, {
       method: "PUT",
       body: form.value,
     });
@@ -31,13 +31,27 @@ const updatePost = async () => {
     });
 
     navigateTo(`/BlogPosts/${updatedPost.item.id}`);
-  } catch (error) {
-    toast.add({
-      title: "Помилка збереження",
-      description: "Не вдалося оновити дані на сервері.",
-      color: "error",
-      icon: "i-lucide-x-circle"
-    });
+  } catch (error: any) {
+    console.error(error)
+
+    if (error.statusCode === 422 && error.data) {
+      
+      const errorMessage = error.data.errors?.slug?.[0] || error.data.message
+
+      toast.add({
+        title: "Помилка валідації",
+        description: errorMessage,
+        color: "error",
+        icon: "i-lucide-x-circle"
+      })
+    } else {
+      toast.add({
+        title: "Помилка оновлення",
+        description: "Не вдалося зберегти зміни на сервері.",
+        color: "error",
+        icon: "i-lucide-x-circle"
+      })
+    }
   } finally {
     isSaving.value = false;
   }

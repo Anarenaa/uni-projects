@@ -50,4 +50,15 @@ class BlogPostRepository extends CoreRepository
     {
         return $this->startConditions()->find($id);
     }
+
+    /**
+     *  Отримати модель з підвантаженою категорію
+     *  @param int $id
+     *  @return Model
+     */
+    public function getWithCategory($id){
+        return $this->startConditions()
+            ->with('category')
+            ->find($id);
+    }
 }

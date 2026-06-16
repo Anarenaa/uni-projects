@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 #[ObservedBy([BlogCategoryObserver::class])]
 class BlogCategory extends Model
@@ -60,5 +61,14 @@ class BlogCategory extends Model
     public function isRoot()
     {
         return $this->id === BlogCategory::ROOT;
+    }
+
+    public function posts(): HasMany
+    {
+        return $this->hasMany(BlogPost::class, 'category_id', 'id');
+    }
+    public function children(): HasMany
+    {
+        return $this->hasMany(BlogCategory::class, 'parent_id', 'id');
     }
 }

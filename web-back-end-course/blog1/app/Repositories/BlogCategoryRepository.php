@@ -36,15 +36,7 @@ class BlogCategoryRepository extends CoreRepository
             'CONCAT (id, ". ", title) AS id_title',  //додаємо поле id_title 
         ]);
 
-        //$result = $this->startConditions()->all();
-        /*$result = $this                           //1 варіант
-            ->startConditions()
-            ->select('blog_categories.*',
-                \DB::raw('CONCAT (id, ". ", title) AS id_title'))
-            ->toBase()                              //не робити колекцію(масив) BlogCategory, отримати дані у вигляді класу
-            ->get();*/
-
-        $result = $this                           //2 варіант
+        $result = $this              
             ->startConditions()
             ->selectRaw($columns)
             ->toBase()
@@ -69,6 +61,7 @@ class BlogCategoryRepository extends CoreRepository
         $result = $this
             ->startConditions()
             ->select($columns)
+            ->where('id', '<>', 1)
             ->with(['parentCategory:id,title',]);
 
         if (!empty($search)) {
@@ -76,5 +69,17 @@ class BlogCategoryRepository extends CoreRepository
         }
 
         return $result->paginate($perPage);
+    }
+    /**
+     *  Отримати модель з батьківською категорію
+     *  @param int $id
+     *  @return Model
+     */
+    public function getWithParent($id)
+    {
+        return $this->startConditions()
+            ->where('id', $id)
+            ->with(['parentCategory:id,title'])
+            ->first();
     }
 }

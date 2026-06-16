@@ -30,7 +30,7 @@ const { data: categoriesList } = await useFetch<any>('/api/blog/admin/categories
 async function onSubmit(event: FormSubmitEvent<CategorySchemaType>) {
   isSaving.value = true
   try {
-    const response = await $fetch<any>("/api/blog/admin/categories", {
+    const response = await $fetch<any>("http://localhost:80/api/blog/admin/categories", {
       method: "POST",
       body: event.data,
     })
@@ -43,14 +43,27 @@ async function onSubmit(event: FormSubmitEvent<CategorySchemaType>) {
     })
 
     await navigateTo("/BlogCategories")
-  } catch (error) {
+  } catch (error: any) {
     console.error(error)
-    toast.add({
-      title: "Помилка створення",
-      description: "Перевірте правильність заповнення полів.",
-      color: "error",
-      icon: "i-lucide-x-circle"
-    })
+
+    if (error.statusCode === 422 && error.data) {
+      
+      const errorMessage = error.data.errors?.slug?.[0] || error.data.message
+
+      toast.add({
+        title: "Помилка валідації",
+        description: errorMessage,
+        color: "error",
+        icon: "i-lucide-x-circle"
+      })
+    } else {
+      toast.add({
+        title: "Помилка оновлення",
+        description: "Не вдалося зберегти зміни на сервері.",
+        color: "error",
+        icon: "i-lucide-x-circle"
+      })
+    }
   } finally {
     isSaving.value = false
   }
